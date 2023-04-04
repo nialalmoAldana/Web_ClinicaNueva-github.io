@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Nueva</title>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- normalize css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- INICIO de header -->
+    <header class="header ">
+
+        <nav class="navbar bg-white">
+            <div class="sub-menu bg-blue">
+                <nav>
+                    <ul>
+                        <li><a href="#">Publicaciones</a></li>
+                        <li><a href="#">Horarios</a></li>
+                        <li><a href="#">Convenios</a></li>
+                        <li><a href="#">Contactenos</a></li>
+                        <li><a href="#">PQR</a></li>
+                    </ul>
+                    <button class="sub-menu_btn">Pagos</button>
+                </nav>
+
+            </div>
+            <div class="container flex">
+                <a href="index.html" class="navbar-brand">
+                    <img src="" alt="Logo Clinica">
+                </a>
+                <button type="button" class="navbar-show-btn">
+                    <img src="images/ham-menu-icon.png">
+                </button>
+
+                <div class="navbar-collapse bg-blue ">
+                    <button type="button" class="navbar-hide-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
+                            height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 13v.01" />
+                            <path d="M4 9v.01" />
+                            <path d="M4 5v.01" />
+                            <path d="M17 20l3 -3l-3 -3" />
+                            <path d="M4 17h16" />
+                        </svg>
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link ">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="nosotros.html" class="nav-link active">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contactenos.html" class="nav-link">Paciente y Familia</a>
+                        </li>
+                    </ul>
+                    <button class="agendar-btn">Agendar cita</button>
+                    <div class="search-bar">
+                        <form>
+                            <div class="search-bar-box flex">
+                                <span class="search-icon flex">
+                                    <img src="images/search-icon-dark.png">
+                                </span>
+                                <input type="search" class="search-control" placeholder="Buscar">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-inicio">
+
+        <div class="inicio-contenedor">
+
+            <div class="panel">
+                <div class="panel-servicios grid-item">
+                    <div class="item-s">
+                        <img src="/images/especialidades-icono.png" class="" alt="logo_especialidad">
+                        <h1 class="text-blue">Especialidades</h1>
+                        <p><span>Expertos en cuidar de ti:<br></span> Encuentra la especialidad médica que necesitas</p>
+                    </div>
+                </div>
+                <div class="panel-especialidades grid-item">
+                    <div class="item-s">
+                        <img src="/images/servicios-iconos.png" alt="logo_especialidad">
+                        <h1 class="text-blue">Servicios</h1>
+                        <p><span>Tu bienestar es nuestra prioridad:<br></span> Descubre nuestros servicios</p>
+                    </div>
+                </div>
+                <div class="panel-ubicacion grid-item">
+                    <div class="item-s">
+                        <img src="/images/mapa.png" alt="logo_especialidad">
+                        <h1 class="text-blue">Ubicanos</h1>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FIN de header -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de especialidades  -->
+    <section class="especialidades">
+        <div class="titulo-especialidades">
+            <h1 class="text-center text-blue">Especialidades</h1>
+        </div>
+        <div class="container-e">
+
+            <div class="especialidades-grid">
+                <div class="box">
+                    <figure class="img-box">
+                        <img src="images/post-1.jpg">
+                        <div class="texto-box">
+                            <p> En esta sección encontrarás una amplia variedad de especialidades clínicas para atender
+                                tus
+                                necesidades médicas.<br> Nuestros especialistas están disponibles para brindarte
+                                la atención que necesitas.</p><br>
+                            <button class="btn-info">conocer mas</button>
+                        </div>
+                    </figure>
+
+                    <div class="head-box text-white">
+                        <h2>Especialidades clínicas</h2>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <figure class="img-box">
+                        <img src="images/post-2.jpg">
+                        <div class="texto-box">
+                            <p>En esta sección te presentamos las especialidades quirúrgicas disponibles en nuestro
+                                centro
+                                médico. <br>Nuestros especialistas altamente capacitados y con amplia experiencia te
+                                ofrecerán un servicio de
+                                calidad y con los más altos estándares</p>
+                            <button class="btn-info">conocer mas</button>
+                        </div>
+                    </figure>
+
+                    <div class="head-box text-white">
+                        <h2>Especialidades quirúrgicas</h2>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <figure class="img-box">
+                        <img src="images/post-3.jpg">
+                        <div class="texto-box">
+                            <p>En esta sección podrás encontrar una serie de servicios de apoyo diagnóstico que
+                                complementarán la atención que recibas por parte de nuestros especialistas. Nuestros
+                                servicios te
+                                permitirán obtener una atención integral y personalizada.</p>
+                            <button class="btn-info">conocer mas</button>
+                        </div>
+                    </figure>
+
+                    <div class="head-box text-white">
+                        <h2>Apoyo diagnóstico</h2>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- FIN  de especialidades  -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de seccion servicios  -->
+
+    <section id="package-service" class="package-service py text-center">
+        <div class="text-white">
+            <h1>Nuestros Servicios</h1>
+        </div>
+        <div class="container-s">
+            <div class="servicios-grid">
+                <div class="box-servicio ambulatorio">
+                    <div class="head-servicio bg-blue text-white text-shadow">
+                        <h4>Servicios ambulatorios</h4>
+                    </div>
+                    <div class="info-servicio text-shadow">
+                        <p> Ofrecemos servicios ambulatorios especializados y convenientes, como consultas externas,
+                            imágenes diagnósticas, endoscopia, terapia física, fonoaudiología y más. Estamos aquí para
+                            ayudarlo a mantener su salud y bienestar.<br>
+                    </div>
+                    <div class="pie-servicio">
+                        <button class="btn-info bg-blue text-white">Más información</button>
+                    </div>
+                </div>
+                <div class="box-servicio hospitalario">
+                    <div class="head-servicio bg-blue text-white text-shadow">
+                        <h4>Servicios hospitalarios</h4>
+                    </div>
+                    <div class="info-servicio text-shadow">
+                        <p> Nuestros servicios hospitalarios ofrecen atención médica especializada para emergencias,
+                            hospitalización, cuidados intensivos, cuidados intermedios y cirugía. Estamos comprometidos
+                            en brindar atención de alta calidad y personalizada para nuestros pacientes. <br>
+                        </p>
+                    </div>
+                    <div class="pie-servicio">
+                        <button class="btn-info bg-blue text-white">Más información</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIN  de seccion servicios  -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO seccion sobre nosotros-->
+
+    <section class="nosotros">
+
+        <div class="contenedor-nosotros">
+            <div><img src="images/clinicafoto.avif"></div>
+            <div>
+                <p>La Clínica Nueva, es una obra de la Congregación de Dominicas de Santa Catalina de Sena, primera
+                    comunidad religiosa fundada en 1880 en Villa de Leyva (Boyacá).<br>
+                </p>
+                <p><br>Como institución hospitalaria nace el 12 de octubre de 1958. Durante más de medio siglo de
+                    existencia y desde sus inicios, se continúa trabajado con la vocación de servicio y el
+                    compromiso con sus cambios y tendencias conservando siempre nuestro propósito común: El paciente
+                    y su familia.</p< /div>
+            </div>
+
+    </section>
+
+    <!-- FIN de sobre nosotros-->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de capacidad insalacion  -->
+
+    <section class="capacidad-instalacion">
+        <div class="capacidad-countup">
+            <div class="container-capacidad text-shadow">
+                <span class="num text-blue" data-val="64">0</span>
+                <span class="text">Camas hospitalición adultos</span>
+            </div>
+            <div class="container-capacidad text-shadow">
+                <span class="num text-blue" data-val="15">0</span>
+                <span class="text">Camas unidad de cuidado intermedio adulto</span>
+            </div>
+            <div class="container-capacidad text-shadow">
+                <span class="num text-blue" data-val="19">0</span>
+                <span class="text ">Camas unidad de cuidado intensivo adulto</span>
+            </div>
+            <div class="container-capacidad text-shadow">
+                <span class="num text-blue" data-val="5">0</span>
+                <span class="text">salas de quirófano</span>
+            </div>
+            <div class="container-capacidad text-shadow">
+                <span class="num text-blue" data-val="2">0</span>
+                <span class="text">Salas de procedimientos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIN  de seccion capacidad instalacion  -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO contactenos  -->
+
+    <section id="contact" class="contact py">
+        <div class="container grid">
+            <div class="contact-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7749170605457!2d-74.07307538474947!3d4.634201543519735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2c3ba726af%3A0x278ae06508ae1471!2sCl%C3%ADnica%20Nueva!5e0!3m2!1ses-419!2sco!4v1680641898382!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-right text-white text-center bg-blue">
+                <div class="contact-head">
+                    <h3 class="lead">Contactenos</h3>
+                  
+                </div>
+              <h3><br>PBX:</h3>
+              <p>+60 (1) 340 2002</p>
+              <h3>Citas:</h3>
+              <p>+60 (1) 327 4444 opcion 2</p>
+              <h3>Correo:</h3>
+              <p>clinicanueva@clinicanueva.com</p>
+              <h3>Direccion: </h3>
+              <p>Calle 45f no. 16a -11 Bogota </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIN  de contactenos  -->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de seccion convenios  -->
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="images/convenio1.PNG" alt="Image 1">
+          <img src="images/convenio2.PNG" alt="Image 2">
+          <img src="images/convenio3.PNG" alt="Image 3">
+          <img src="images/convenio4.PNG" alt="Image 4">
+        </div>
+        <button class="carousel-button prev"><</button>
+        <button class="carousel-button next">></button>
+      </div>
+
+    <!-- FIN  de seccion convenios  -->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de Redes sociales flotantes-->
+
+    <article class="contenedor-redes-sociales">
+        <div class="icono">
+            <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion">Seguir Facebook</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.instagram.com/clinicanueva_/" class="icono-primary color-twitter" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                class="icono-primary color-googleplus" target="_blank"><i class="fa fa-youtube"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FIN de Redes sociales flotantes-->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO footer  -->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Acerca de nosotros</h3>
+                    <div class="icon">
+                        <img src="images/logo.png">
+                    </div>
+                    <p class="text text-md">La buena nueva para su salud</p>
+                    <address>
+                        Clinica Nueva <br>
+                        Cl. 45f #16a - 11<br>
+                        Teusaquillo, Bogotá <br>
+                        Colombia
+                    </address>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">tags</h3>
+                    <ul class="tags-list flex">
+                        <li>Inicio</li>
+                        <li>Especialidades</li>
+                        <li>Servicios</li>
+                        <li>Pedir una cita</li>
+                        <li>Horario de atencion</li>
+                        <li>Pagos</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                    <ul>
+                        <li><a href="#" class="text-white">Inicio</a></li>
+                        <li><a href="#" class="text-white">Pide una cita</a></li>
+                        <li><a href="#" class="text-white">Pagos</a></li>
+                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Contactanos</h3>
+                    <p class="text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, omnis.
+                    </p>
+
+                    <i class="fas fa-envelope"></i>
+                    <span>@clinicanueva.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+003 478 2834(00)</span>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <ul class="flex">
+                    <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
+                                class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                                class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FIN  de footer  -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>
