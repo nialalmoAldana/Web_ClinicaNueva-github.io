@@ -51,3 +51,27 @@ App.prototype.autoChangePosition = function() {
         track.style.left = 0;
     }
 }
+
+
+
+
+
+
+$(document).ready(function() {
+    window.addEventListener('dfMessengerLoaded', function (event) {
+        $r1 = document.querySelector("df-messenger");
+        $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+        $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+
+        // Cambia el texto "Ask something" al texto deseado
+        $r3.setAttribute("placeholder", "Escribe tu mensaje aquí");
+
+        // También puedes establecer un valor predeterminado para el campo de entrada
+        $r3.value = "¡Hola! ¿En qué puedo ayudarte?";
+
+        var sheet = new CSSStyleSheet;
+        sheet.replaceSync( `div.chat-wrapper[opened="true"] { height: 450px }`);
+        $r2.shadowRoot.adoptedStyleSheets = [ sheet ];
+    });
+});
+

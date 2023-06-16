@@ -19,24 +19,29 @@
     <!-- css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
     <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
 
 </head>
 
 <body>
-
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185"
+        language-code="en" chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+    
+    </df-messenger>
     <!-- INICIO de header -->
     <header class="header ">
         <nav class="navbar bg-white">
             <div class="sub-menu bg-blue">
                 <nav>
                     <ul>
-                        <li><a href="#">Publicaciones</a></li>
-                        <li><a href="#">Horarios</a></li>
-                        <li><a href="#">Convenios</a></li>
-                        <li><a href="#">Contactenos</a></li>
-                        <li><a href="#">PQR</a></li>
+                        <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a href="convenios.html">Convenios</a></li>
+                        <li><a href="contactenos.html">Contactenos</a></li>
+                        <li><a href="pqr.html">PQR</a></li>
                     </ul>
                     <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
                         class="sub-menu_btn">Pagos</button>
@@ -44,7 +49,7 @@
             </div>
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
-                    <img src="" alt="Logo Clinica">
+                    <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
                     <img src="images/ham-menu-icon.png">
@@ -75,15 +80,87 @@
                         </li>
                     </ul>
                     <button class="agendar-btn">Agendar cita</button>
-                    <div class="search-bar">
-                        <form>
-                            <div class="search-bar-box flex">
-                                <span class="search-icon flex">
-                                    <img src="images/search-icon-dark.png">
-                                </span>
-                                <input type="search" class="search-control" placeholder="Buscar">
+                    <div class="buscador">
+                        <div class="search-space">
+                            <div class="lupa-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                  </svg>
                             </div>
-                        </form>
+                            <div class="input-space">
+                                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+                            </div>
+                        </div>
+                        <div class="content-search">
+                            <div class="content-table">
+                                <p>Lista de resultados:</p>
+                                <table id="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">horarios</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pacientes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">contactenos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">citas</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">Nosotros</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pagos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">publicaciones</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pqr</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">imagenes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">noticias</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">ubicanos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">servicios</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">especialidades</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,9 +195,9 @@
             <h1 class="text-blue text-shadow">Contáctanos</h1>
             <h2 class="text-center">Para agendar tu cita, contáctanos a través de los siguientes medios:</h2>
             <ul>
-                <li>Teléfono: 555-555-5555</li>
-                <li>Correo electrónico: cita@ejemplo.com</li>
-                <li>Dirección: 123 Calle Principal, Ciudad</li>
+                <li>Teléfono: +60 (1) 327 4444 opcion 2</li>
+                <li>Correo electrónico: clinicanueva@clinicanueva.com</li>
+                <button class="btn-agendar_wpp"></button>
             </ul>
             <button class="agendar-btn">Llamar ahora</button>
         </div>
@@ -224,87 +301,121 @@
     </div>
 
 
+<!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de Redes sociales flotantes-->
+
+    <article class="contenedor-redes-sociales">
+        <div class="icono">
+            <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion">Seguir Facebook</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.instagram.com/clinicanueva_/" class="icono-primary color-twitter" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                class="icono-primary color-googleplus" target="_blank"><i class="fa fa-youtube"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FIN de Redes sociales flotantes-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- INICIO footer  -->
+   <!-- INICIO footer  -->
 
-    <footer id="footer" class="footer text-center">
-        <div class="container">
-            <div class="footer-inner text-white py grid">
-                <div class="footer-item">
-                    <h3 class="footer-head text-blue">Acerca de nosotros</h3>
-                    <div class="icon">
-                        <img src="images/logo.png">
-                    </div>
-                    <p class="text text-md">La buena nueva para su salud</p>
-                    <address>
-                        Clinica Nueva <br>
-                        Cl. 45f #16a - 11<br>
-                        Teusaquillo, Bogotá <br>
-                        Colombia
-                    </address>
+   <footer id="footer" class="footer text-center">
+    <div class="container">
+        <div class="footer-inner text-white py grid">
+            <div class="footer-item">
+
+                <div class="icon">
+                    <img src="images/Logo_blanco.png">
                 </div>
 
-                <div class="footer-item">
-                    <h3 class="footer-head text-blue">tags</h3>
-                    <ul class="tags-list flex">
-                        <li>Inicio</li>
-                        <li>Especialidades</li>
-                        <li>Servicios</li>
-                        <li>Pedir una cita</li>
-                        <li>Horario de atencion</li>
-                        <li>Pagos</li>
-                        <li>Blog</li>
-                    </ul>
-                </div>
-
-                <div class="footer-item">
-                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
-                    <ul>
-                        <li><a href="#" class="text-white">Inicio</a></li>
-                        <li><a href="#" class="text-white">Pide una cita</a></li>
-                        <li><a href="#" class="text-white">Pagos</a></li>
-                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-item">
-                    <h3 class="footer-head text-blue">Contactanos</h3>
-                    <p class="text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, omnis.
-                    </p>
-
-                    <i class="fas fa-envelope"></i>
-                    <span>@clinicanueva.com</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+003 478 2834</span>
-                    </li>
-                    </ul>
-                </div>
+                <address>
+                    
+                    <p>Cl. 45f #16a - 11</p>
+                    <p>Teusaquillo, Bogotá </p>
+                </address>
             </div>
 
-            <div class="footer-links">
-                <ul class="flex">
-                    <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
-                                class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
-                                class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
-                                class="fab fa-instagram"></i></a></li>
+            <div class="footer-item">
+                <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                <ul class="tags-list flex">
+                    <li>Publicaciones</li>
+                    <li>Horarios</li>
+                    <li>Convenios</li>
+                    <li>Contactenos</li>
+                    <li>PQR</li>
+
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="footer-head text-blue">
+                    <Menu>menu</Menu>
+                </h3>
+                <ul>
+                    <li><a href="#" class="text-white">Inicio</a></li>
+                    <li><a href="#" class="text-white">Nosotros</a></li>
+                    <li><a href="#" class="text-white">Paciente y Familia</a></li>
+                    <li><a href="#" class="text-white">Agendar cita</a></li>
+                    <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="footer-head text-blue">Contactanos</h3>
+                <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con nosotros en cualquier momento.
+                </p>
+
+                <i class="fas fa-envelope"></i>
+                <span>@clinicanueva.com</span>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <span>+003 478 2834(00)</span>
+                </li>
                 </ul>
             </div>
         </div>
-    </footer>
 
-    <!-- FIN  de footer  -->
+        <div class="footer-links">
+            <ul class="flex">
+                <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
+                            class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                            class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                            class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- FIN  de footer  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- custom js -->
     <script src="js/script.js"></script>
-
+    <script src="js/search.js"></script>
 
 </body>
 

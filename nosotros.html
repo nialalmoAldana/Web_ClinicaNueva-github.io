@@ -19,12 +19,23 @@
     <!-- css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
     <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
 
 </head>
 
 <body>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="en"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+
+    </df-messenger>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO de header -->
     <header class="header ">
@@ -74,28 +85,141 @@
                             <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
                         </li>
                     </ul>
-                    <button class="agendar-btn"> <a href="agendar.html"></a> cita</button>
-                    <div class="search-bar">
-                        <form>
-                            <div class="search-bar-box flex">
-                                <span class="search-icon flex">
-                                    <img src="images/search-icon-dark.png">
-                                </span>
-                                <input type="search" class="search-control" placeholder="Buscar">
+
+                    <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
+
+                    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                    <div class="buscador">
+                        <div class="search-space">
+                            <div class="lupa-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
                             </div>
-                        </form>
+                            <div class="input-space">
+                                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+                            </div>
+                        </div>
+                        <div class="content-search">
+                            <div class="content-table">
+                                <p>Lista de resultados:</p>
+                                <table id="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">horarios</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pacientes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">contactenos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">citas</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">Nosotros</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pagos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">publicaciones</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pqr</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">imagenes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">noticias</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">ubicanos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">servicios</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">especialidades</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
+
+                    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
                 </div>
             </div>
         </nav>
     </header>
 
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de Redes sociales flotantes-->
+
+    <article class="contenedor-redes-sociales">
+        <div class="icono">
+            <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion">Seguir Facebook</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.instagram.com/clinicanueva_/" class="icono-primary color-twitter" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                class="icono-primary color-googleplus" target="_blank"><i class="fa fa-youtube"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FIN de Redes sociales flotantes-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- INICIO footer  -->
+    <!-- INICIO HERO  -->
 
-    <section>
+    <section class="hero">
         <div class="hero-nosotros">
             <div class="negro-bg text-white text-center">
                 <h1>Nosotros</h1>
@@ -103,6 +227,9 @@
         </div>
     </section>
 
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO NOSOTROS  -->
 
     <section class="nosotros-">
 
@@ -124,30 +251,54 @@
         </div>
     </section>
 
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
     <div class="linea-separadora"></div>
 
-    <section class="mv-nosotros">
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <section class="mv-nosotros py">
         <div class="contenedor-nos">
             <div class="info-nos text-justify ">
                 <img src="images/logo.png">
-                <p class="text-shadow text-shadow ">La Clínica Nueva, es una obra de la Congregación de Dominicas de Santa Catalina
+                <p class="text-shadow ">La Clínica Nueva, es una obra de la Congregación de Dominicas de
+                    Santa Catalina
                     de Sena, primera comunidad religiosa fundada en 1880 en Villa de Leyva (Boyacá).
                     <br><br>Como institución hospitalaria nace el 12 de octubre de 1958. Durante más de medio siglo de
                     existencia y desde sus inicios, se continúa trabajado con la vocación de servicio y el compromiso
                     con sus cambios y tendencias conservando siempre nuestro propósito común: El paciente y su familia.
                 </p>
+                <div class="btn_default1">
+                    <nav>
+                        <ul>
+                            <li>
+                                Principios
+                                <span></span><span></span><span></span><span></span>
+                            </li>
+                            <li>
+                                Valores
+                                <span></span><span></span><span></span><span></span>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
             </div>
+
+
+            <!--                                         -->
+
             <div id="div1">
                 <div id="div2">
-                    <div class="text-center text-shadow" id="misiondiv">
-                        <h1 class="text-blue">Misión</h1>
+                    <div class="text-center " id="misiondiv">
+                        <h1 class="text-blue text-shadow">Misión</h1>
                         <p>Contribuir activamente al objetivo de la Congregación de Dominicas de Santa Catalina de Sena
                             de servir a través de la atención en salud, la generación y transmisión de conocimiento por
                             medio de una gestión organizacional eficiente capaz de generar rentabilidad social y
                             sostenibilidad institucional.</p>
                     </div>
                     <div class="text-center" id="visiondiv" style="display:none">
-                        <h1 class="text-blue">Visión</h1>
+                        <h1 class="text-blue text-shadow">Visión</h1>
                         <p>En el año 2025, la Clinica Nueva será una institución sostenible, socialmente rentable,
                             preferida por los usuarios y clientes gracias a su modelo de gestión organizacional
                             eficiente, la humanización de sus acciones asistenciales y la gestión del conocimiento, con
@@ -156,41 +307,24 @@
 
                         </p>
                     </div>
-                    <button id="btn-toggle" onclick="toggleInfo()">Visión </button>
+
+                    <button id="btn-toggle" onclick="toggleInfo()">ver visión <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-caret-right" width="20" height="20" viewBox="0 0 24 24"
+                            stroke-width="3" stroke="#004AAD" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 18l6 -6l-6 -6v12" />
+                        </svg></button>
                 </div>
             </div>
         </div>
     </section>
 
- 
-<!--
-    <section>
-        <div class="contenedor-equipo">
-            <h1 class="text-blue text-center">Nuestro equipo</h1>
-            <div class="equipo text-white">
-                <div class="box ">
-                    <img src="images/doc-1.png" alt="Imagen 1">
-                    <h2>Doc 1</h2>
-                </div>
-                <div class="box">
-                    <img src="images/doc-2.png" alt="Imagen 2">
-                    <h2>Doc 2</h2>
-                </div>
-                <div class="box">
-                    <img src="images/doc-3.png" alt="Imagen 3">
-                    <h2>Doc 3</h2>
-                </div>
-                <div class="box">
-                    <img src="images/doc-4.png" alt="Imagen 4">
-                    <h2>Doc 4</h2>
-                </div>
-            </div>
-        </div>
-    </section>
--->
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
+    <!--NUESTRO EQUIPO-->
 
-    <section>
+    <section class="nuestro_equipo">
         <div class="Carousel py">
             <h1 class="text-center text-blue">Nuestro equipo</h2>
                 <div class="slick-list" id="slick-list">
@@ -208,7 +342,7 @@
                         <div class="slick">
                             <div>
                                 <a href="/">
-                                    
+
                                     <picture>
                                         <img src="./images/doc-1.png" alt="Image">
                                     </picture>
@@ -219,8 +353,8 @@
                         <div class="slick">
                             <div>
                                 <a href="/">
-                                    
-                                        <img src="./images/doc-2.png" alt="Image">
+
+                                    <img src="./images/doc-2.png" alt="Image">
                                     </picture>
                                     <h3 class="pie-slick text-center text-white">Doctor 4</h3>
                                 </a>
@@ -229,17 +363,17 @@
                         <div class="slick">
                             <div>
                                 <a href="/">
-                                        <img src="./images/doc-3.png" alt="Image">
+                                    <img src="./images/doc-3.png" alt="Image">
                                     </picture>
                                     <h3 class="pie-slick text-center text-white">Doctor 4</h3>
                                 </a>
                             </div>
-                            
+
                         </div>
                         <div class="slick">
                             <div>
                                 <a href="/">
-                                    
+
                                     <picture>
                                         <img src="./images/doc-4.png" alt="Image">
                                     </picture>
@@ -250,7 +384,7 @@
                         <div class="slick">
                             <div>
                                 <a href="/">
-                                   
+
                                     <picture>
                                         <img src="./images/doc-4.png" alt="Image">
                                     </picture>
@@ -258,7 +392,7 @@
                                 </a>
                             </div>
                         </div>
-                   
+
                     </div>
                     <button class="slick-arrow slick-next" id="button-next" data-button="button-next"
                         onclick="app.processingButton(event)">
@@ -271,30 +405,278 @@
                         </svg>
                     </button>
                 </div>
-    
+
         </div>
     </section>
-    
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--NUESTRO EQUIPO-->
+
+    <section class="principios bg-blue">
+        <div class="container-principios">
+            <h1 class="text-white">Principios</h1>
+            <div class="row-principios">
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Trabajo en equipo</h2>
+              
+                </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>vocación de servicio</h2>
+              </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Cumplimiento de compromisos</h2>
+                   
+                </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Comunicacion asertiva</h2>
+              
+                </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Orientacion al logro</h2>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
 
 
+    <section class="principios ">
+        <div class="container-principios">
+            <h1 class="text-blue">Valores</h1>
+            <div class="row-principios">
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Humanidad</h2>
+              
+                </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Honstidad</h2>
+              </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Constancia</h2>
+                   
+                </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Etica</h2>
+              
+                </div>
+                <div class="principio">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Superacion</h2>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--ESTADO FINANCIERO-->
+
+    <section class="informes-se">
+        <div class="contenedor-informes">
+
+            <form action="">
+                <div class="selectbox">
+                    <div class="select" id="select">
+                        <div class="contenido-select">
+                            <h1 class="titulo">Estados financieros</h1>
+                            <p class="descripcion">Selecciona el estado financiero que deseas ver</p>
+                        </div>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+
+                    <div class="opciones" id="opciones">
+                        <a href="images/estados-financieros/Estados Financieros 2014 - 2015.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2014-2015img.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2014 - 2015</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2014 - 2015</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/Estados Financieros 2015 - 2016.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2015-2016img.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2015 - 2016</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2015 - 2016</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/Estados Financieros 2016 - 2017.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2016-2017.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2016 - 2017</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2016 - 2017</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/Estados Financieros 2017 - 2018.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2017-2018.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2017 - 2018</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2017 - 2018</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/Estados Financieros 2018 - 2019.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2018-2019.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2018 - 2019</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2018 - 2019</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/Estados Financieros 2019 - 2020.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2019-2020.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2019 - 2020</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2019 - 2020</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/EstadosFinancieros2020-2021.pdf" target="_blank"
+                            class="opcion">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2020-2021.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo">2020 - 2021</h1>
+                                    <p class="descripcion">Estado de situación financiera para el año 2020 - 2021</p>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <input type="hidden" name="pais" id="inputSelect" value="">
+            </form>
 
 
- 
+            <form action="">
+                <div class="selectbox">
+                    <div class="select" id="select1">
+                        <div class="contenido-select1">
+                            <h1 class="titulo">Informes de gestión</h1>
+                            <p class="descripcion">Selecciona el informe que deseas ver</p>
+                        </div>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+
+                    <div class="opciones" id="opciones1">
+                        <a href="images/informes-de-gestion/informe2012.pdf" target="_blank1" class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/informes-de-gestion/2012.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2012</h1>
+                                    <p class="descripcion">Informe de gestión para el año 2014 - 2015</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/informes-de-gestion/informe2013.pdf" target="_blank1" class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/informes-de-gestion/2013.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2013</h1>
+                                    <p class="descripcion">Informe de gestión para el año</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/informes-de-gestion/informe2014.pdf" target="_blank1" class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/informes-de-gestion/2014.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2014</h1>
+                                    <p class="descripcion">Informe de gestión para el año</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/informes-de-gestion/Informe2015.pdf" target="_blank1" class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/informes-de-gestion/2015.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2015</h1>
+                                    <p class="descripcion">Informe de gestión para el año</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/informes-de-gestion/informe2017.pdf" target="_blank1" class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/informes-de-gestion/2017.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2016</h1>
+                                    <p class="descripcion">Informe de gestión para el año</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/informes-de-gestion/Informe2018.pdf" target="_blank1" class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/informes-de-gestion/2018.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2017</h1>
+                                    <p class="descripcion">Informe de gestión para el año</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="images/estados-financieros/EstadosFinancieros2020-2021.pdf" target="_blank1"
+                            class="opcion1">
+                            <div class="contenido-opcion">
+                                <img src="images/estados-financieros/img-estados/2020-2021.PNG" alt="">
+                                <div class="textos">
+                                    <h1 class="titulo1">2018</h1>
+                                    <p class="descripcion">Informe de gestión para el año</p>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <input type="hidden" name="pais" id="inputSelect" value="">
+
+            </form>
+
+        </div>
+    </section>
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- SECCION TRABAJE CON NOSOTROS-->
 
     <section class="trabajo_nosotros">
-
-
         <div class="trabajo-nos"
             onclick="window.open('https://co.computrabajo.com/empresas/ofertas-de-trabajo-de-clinica-nueva-B965A5201617A8AC', '_blank')">
             <h1 class="text-blue text-center">Trabaje con nosotros</h1>
             <img src="images/trabajo-banner.PNG">
         </div>
-
-        </div>
     </section>
-
-
-
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -304,45 +686,47 @@
         <div class="container">
             <div class="footer-inner text-white py grid">
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">Acerca de nosotros</h3>
+
                     <div class="icon">
-                        <img src="images/logo.png">
+                        <img src="images/Logo_blanco.png">
                     </div>
-                    <p class="text text-md">La buena nueva para su salud</p>
+
                     <address>
-                        Clinica Nueva <br>
-                        Cl. 45f #16a - 11<br>
-                        Teusaquillo, Bogotá <br>
-                        Colombia
+
+                        <p>Cl. 45f #16a - 11</p>
+                        <p>Teusaquillo, Bogotá </p>
                     </address>
                 </div>
 
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">tags</h3>
+                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
                     <ul class="tags-list flex">
-                        <li>Inicio</li>
-                        <li>Especialidades</li>
-                        <li>Servicios</li>
-                        <li>Pedir una cita</li>
-                        <li>Horario de atencion</li>
-                        <li>Pagos</li>
-                        <li>Blog</li>
+                        <li>Publicaciones</li>
+                        <li>Horarios</li>
+                        <li>Convenios</li>
+                        <li>Contactenos</li>
+                        <li>PQR</li>
+
                     </ul>
                 </div>
 
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                    <h3 class="footer-head text-blue">
+                        <Menu>menu</Menu>
+                    </h3>
                     <ul>
                         <li><a href="#" class="text-white">Inicio</a></li>
-                        <li><a href="#" class="text-white">Pide una cita</a></li>
-                        <li><a href="#" class="text-white">Pagos</a></li>
-                        <li><a href="#" class="text-white">Sobre Nosotros</a></li>
+                        <li><a href="#" class="text-white">Nosotros</a></li>
+                        <li><a href="#" class="text-white">Paciente y Familia</a></li>
+                        <li><a href="#" class="text-white">Agendar cita</a></li>
+                        <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-item">
                     <h3 class="footer-head text-blue">Contactanos</h3>
-                    <p class="text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, omnis.
+                    <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con
+                        nosotros en cualquier momento.
                     </p>
 
                     <i class="fas fa-envelope"></i>
@@ -350,7 +734,7 @@
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
-                        <span>+003 478 2834</span>
+                        <span>+003 478 2834(00)</span>
                     </li>
                     </ul>
                 </div>
@@ -374,10 +758,27 @@
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- custom js -->
-    <script src="js/script.js"></script>
-    <script src="js/scriptcarrousel.js"></script>
 
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/select-box.js"></script>
 
 </body>
 
 </html>
+
+
+
+<!--   
+    .contenedor{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        max-width: 140rem;
+    }
+
+
+
+
+
+-->

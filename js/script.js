@@ -10,17 +10,6 @@ navbarHideBtn.addEventListener('click', function(){
     navbarCollapseDiv.classList.remove('navbar-show');
 });
 
-// changing search icon image on window resize
-window.addEventListener('resize', changeSearchIcon);
-function changeSearchIcon(){
-    let winSize = window.matchMedia("(min-width: 1200px)");
-    if(winSize.matches){
-        document.querySelector('.search-icon img').src = "images/search-icon.png";
-    } else {
-        document.querySelector('.search-icon img').src = "images/search-icon-dark.png";
-    }
-}
-changeSearchIcon();
 
 // stopping all animation and transition
 let resizeTimer;
@@ -109,11 +98,11 @@ function toggleInfo() {
   if (mission.style.display === "none") {
     mission.style.display = "block";
     vision.style.display = "none";
-    btn.textContent = "Visión";
+    btn.textContent = "ver visión";
   } else {
     mission.style.display = "none";
     vision.style.display = "block";
-    btn.textContent = "Misión";
+    btn.textContent = "ver misión";
   }
 }
 
@@ -132,6 +121,10 @@ function closeModal(event, modalId) {
   }
 }
 
+window.onload = function() {
+  openModal('modal-horario');
+}
+//----------banner---------------------------------------------------------------------------
 
 var carousel = document.querySelector(".carousel");
 var images = carousel.querySelectorAll("img");

@@ -19,39 +19,64 @@
     <!-- css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
     <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
 
 </head>
 
 <body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="es"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+    </df-messenger>
+    <div id="dialogflow-chat-icon">
+        <img src="https://www.gstatic.com/dialogflow-console-external/cx-badge.svg" alt="Chat Icon" />
+        <div id="df-messenger-chat-background-color"> </div>
+        <div id=""></div>
+    </div>
+
+    <style>
+        df-messenger {
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #6f95ff;
+        }
+    </style>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO de header -->
+
     <header class="header ">
         <nav class="navbar bg-white">
-            <div class="sub-menu bg-blue">
+            <div class="sub-menu bg-blue text-md">
                 <nav>
                     <ul>
+                        <li><a href="imagenes.html">Imagenes diagnosticas</a></li>
                         <li><a href="publicaciones.html">Publicaciones</a></li>
                         <li><a href="horarios.html">Horarios</a></li>
                         <li><a href="convenios.html">Convenios</a></li>
                         <li><a href="Contactenos.html">Contactenos</a></li>
                         <li><a href="pqr.html">PQR</a></li>
                     </ul>
-                    <button class="sub-menu_btn"><a
-                            href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386">Pagos</a></button>
                 </nav>
-
             </div>
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
-                    <img src="images/ham-menu-icon.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
                 </button>
-
-                <div class="navbar-collapse bg-blue ">
+                <div class="navbar-collapse bg-blue text-white ">
                     <button type="button" class="navbar-hide-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
                             height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -65,32 +90,111 @@
                         </svg>
                     </button>
                     <ul class="navbar-nav">
+                        <br><br>
                         <li class="nav-item">
                             <a href="index.html" class="nav-link ">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="nosotros.html" class="nav-link active">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
                         </li>
                     </ul>
                     <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
-                    <div class="search-bar">
-                        <form>
-                            <div class="search-bar-box flex">
-                                <span class="search-icon flex">
-                                    <img src="images/search-icon-dark.png">
-                                </span>
-                                <input type="search" class="search-control" placeholder="Buscar">
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
+                    <div class="buscador">
+                        <div class="search-space">
+                            <div class="lupa-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
                             </div>
-                        </form>
-                    </div>
+                            <div class="input-space">
+                                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+                            </div>
+                        </div>
+                        <div class="content-search">
+                            <div class="content-table">
+                                <p>Lista de resultados:</p>
+                                <table id="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
 
+                                    <tbody>
+                                        <tr>
+                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">horarios</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pacientes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">contactenos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">citas</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">Nosotros</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pagos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">publicaciones</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">pqr</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">imagenes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">noticias</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">ubicanos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">servicios</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">especialidades</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <section class="hero-inicio">
 
@@ -125,47 +229,44 @@
 
     <!-- FIN de header -->
 
-    <!--/////////////////#006fd6////////////////////////////////////////////////////////////////////-->
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+    
+    <!-- IMAGENES DIAGNOSTICAS-->
 
     <section class="imagenes-banner">
         <div class="img-banner_">
-            <img src="images/imagenes-diagnosticas.png">
+            <a href="https://indiraportal-colombia.azurewebsites.net/dashboard/studies">
+                <img src="images/imagenes-diagnosticas.png"
+                    onclick="window.location.url='https://indiracolombia.b2clogin.com/indiracolombia.onmicrosoft.com/b2c_1a_signup_signin_mainprodportal/oauth2/v2.0/authorize?client_id=c27deafe-db03-4712-84c2-249c2ba92e13&scope=https%3A%2F%2Findiracolombia.onmicrosoft.com%2Findiraportal%2Fuser_impersonation%20openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Findiraportal-colombia.azurewebsites.net%2Fsignin-oidc&client-request-id=69ba15f9-75f1-4ede-9831-ca1c9d4a0bb9&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=2.24.0&client_info=1&code_challenge=DXSXwmIkKF3Ajc29nKsqzHQWwD2zdKDw1_DWCrBXiiY&code_challenge_method=S256&nonce=65bbbb06-9dea-4867-9328-1b62cd8ee58b&state=eyJpZCI6Ijk4NDJmZDIzLTdkY2YtNDViNi04MmY1LWYyNmU1MmQ0MzBiYyIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D';"
+                    style="cursor: pointer;">
+            </a>
         </div>
     </section>
-
-
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO de especialidades  -->
+
     <section class="especialidades">
         <div class="titulo-especialidades">
             <h1 class="text-center text-blue">Especialidades</h1>
         </div>
         <div class="container-e">
-
             <div class="especialidades-grid">
-
                 <div class="box">
-
                     <figure class="img-box">
                         <img src="images/post-1.jpg">
-                
                         <div class="texto-box">
                             <p> En esta sección encontrarás una amplia variedad de especialidades clínicas para atender
                                 tus
                                 necesidades médicas.<br> Nuestros especialistas están disponibles para brindarte
                                 la atención que necesitas.</p><br>
-                            
                         </div>
-                  
                     </figure>
                     <div class="head-box text-white">
                         <h2>Especialidades clínicas</h2>
                     </div>
-
                 </div>
-
                 <div class="box">
                     <figure class="img-box">
                         <img src="images/post-2.jpg">
@@ -175,15 +276,12 @@
                                 médico. <br>Nuestros especialistas altamente capacitados y con amplia experiencia te
                                 ofrecerán un servicio de
                                 calidad y con los más altos estándares</p>
-                       
                         </div>
                     </figure>
-
                     <div class="head-box text-white">
                         <h2>Especialidades quirúrgicas</h2>
                     </div>
                 </div>
-
                 <div class="box">
                     <figure class="img-box">
                         <img src="images/post-3.jpg">
@@ -192,19 +290,16 @@
                                 complementarán la atención que recibas por parte de nuestros especialistas. Nuestros
                                 servicios te
                                 permitirán obtener una atención integral y personalizada.</p>
-                            
                         </div>
                     </figure>
-
                     <div class="head-box text-white">
                         <h2>Apoyo diagnóstico</h2>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
+
     <!-- FIN  de especialidades  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
@@ -215,29 +310,37 @@
         <div class="text-white">
             <h1>Nuestros Servicios</h1>
         </div>
+
         <div class="container-s">
+
             <div class="servicios-grid">
+
+
                 <div class="box-servicio ambulatorio">
+
                     <div class="head-servicio bg-blue text-white text-shadow">
                         <h4>Servicios ambulatorios</h4>
                     </div>
-                   
+
                     <div class="info-servicio text-shadow">
                         <p> Ofrecemos servicios ambulatorios especializados y convenientes, como consultas externas,
                             imágenes diagnósticas, endoscopia, terapia física, fonoaudiología y más. Estamos aquí para
-                            ayudarlo a mantener su salud y bienestar.<br>        
+                            ayudarlo a mantener su salud y bienestar.<br>
                     </div>
+
                     <div class="pie-servicio">
-                        <button class="btn-info bg-blue text-white">Más información</button> 
+
                     </div>
-                   <img class="img-serv" src="images/ambulatorios.PNG" id="img-serv">
+                    <div>
+                        <img class="img-serv" src="images/ambulatorios.PNG" id="img-serv">
+                    </div>
                 </div>
 
                 <div class="box-servicio hospitalario">
                     <div class="head-servicio bg-blue text-white text-shadow">
                         <h4>Servicios hospitalarios</h4>
                     </div>
-                 
+
                     <div class="info-servicio text-shadow">
                         <p> Nuestros servicios hospitalarios ofrecen atención médica especializada para emergencias,
                             hospitalización, cuidados intensivos, cuidados intermedios y cirugía. Estamos comprometidos
@@ -245,7 +348,7 @@
                         </p>
                     </div>
                     <div class="pie-servicio">
-                        <button class="btn-info bg-blue text-white">Más información</button>
+
                     </div>
                     <img class="img-serv" src="images/hospitalarios.PNG" id="img-serv">
                 </div>
@@ -260,10 +363,10 @@
 
     <!-- INICIO seccion sobre nosotros-->
 
-    <section class="nosotros py">
+    <section class="nosotros-index ">
 
-        <div class="contenedor-nosotros py">
-            <div><img src="images/clinicafoto.avif"></div>
+        <div class="contenedor-nosotros ">
+            <div class="nosotros-clinica"><img src="images/clinicafoto.avif"></div>
             <div class="texto-nosotros text-center text-shadow">
                 <img class="img-logo" src="images/logo.png">
                 <p>La Clínica Nueva, es una obra de la Congregación de Dominicas de Santa Catalina de Sena, primera
@@ -283,7 +386,7 @@
 
     <!-- INICIO de capacidad insalacion  -->
 
-    <section class="capacidad-instalacion">
+    <section class="capacidad-instalacion ">
         <div class="capacidad-countup">
             <div class="container-capacidad text-shadow">
                 <span class="num text-blue" data-val="64">0</span>
@@ -311,341 +414,344 @@
     <!-- FIN  de seccion capacidad instalacion  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
-    
-        <!-- INICIO contactenos  -->
 
-        <section id="contact" class="contact py">
-            <div class="container grid">
-                <div class="contact-left">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.257959536048!2d-74.10652680394294!3d4.632898886166197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2c3ba726af%3A0x278ae06508ae1471!2sCl%C3%ADnica%20Nueva!5e0!3m2!1ses-419!2sco!4v1682426561694!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <div class="contact-right text-white text-center bg-blue">
-                    <div class="contact-head">
-                        <h3 class="lead">Contactenos</h3>
-                    </div>
-                    <h3><br>PBX:</h3>
-                    <div class="contact-info-m">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-calling"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                            <line x1="15" y1="7" x2="15" y2="7.01" />
-                            <line x1="18" y1="7" x2="18" y2="7.01" />
-                            <line x1="21" y1="7" x2="21" y2="7.01" />
-                        </svg>
-                        <p>+60 (1) 340 2002</p><br>
-                    </div>
-                    <h3>Citas:</h3>
-                    <div class="contact-info-m">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-check" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                            <path d="M15 6l2 2l4 -4" />
-                        </svg>
-    
-                        <p>+60 (1) 327 4444 opcion 2</p><br>
-                    </div>
-                    <h3>Correo:</h3>
-                    <div class="contact-info-m">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <rect x="3" y="5" width="18" height="14" rx="2" />
-                            <polyline points="3 7 12 13 21 7" />
-                        </svg>
-                        <p>clinicanueva@clinicanueva.com</p><br>
-                    </div>
-                    <h3>Direccion: </h3>
-                    <div class="contact-info-m">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24"
-                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <circle cx="12" cy="11" r="3" />
-                            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-                        </svg>
-                        <p>Calle 45f no. 16a -11 Bogota </p><br>
-                    </div>
-                    
-                </div>
+    <!-- INICIO contactenos  -->
+
+    <section id="contact" class="contact py">
+        <div class="container grid">
+            <div class="contact-left">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.257959536048!2d-74.10652680394294!3d4.632898886166197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2c3ba726af%3A0x278ae06508ae1471!2sCl%C3%ADnica%20Nueva!5e0!3m2!1ses-419!2sco!4v1682426561694!5m2!1ses-419!2sco"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-        </section>
-    
-        <!-- FIN  de contactenos  -->
+            <div class="contact-right text-white text-center bg-blue">
+                <div class="contact-head">
+                    <h3 class="lead">Contactenos</h3>
+                </div>
+                <h3><br>PBX:</h3>
+                <div class="contact-info-m">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-calling"
+                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                        <line x1="15" y1="7" x2="15" y2="7.01" />
+                        <line x1="18" y1="7" x2="18" y2="7.01" />
+                        <line x1="21" y1="7" x2="21" y2="7.01" />
+                    </svg>
+                    <p>+60 (1) 327 4444</p><br>
+                </div>
+                <h3>Citas:</h3>
+                <div class="contact-info-m">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-check" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                        <path d="M15 6l2 2l4 -4" />
+                    </svg>
 
+                    <p>+60 (1) 327 4444 opcion 2</p><br>
+                </div>
+                <h3>Correo:</h3>
+                <div class="contact-info-m">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <polyline points="3 7 12 13 21 7" />
+                    </svg>
+                    <p>clinicanueva@clinicanueva.com</p><br>
+                </div>
+                <h3>Direccion: </h3>
+                <div class="contact-info-m">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#006fd6" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <circle cx="12" cy="11" r="3" />
+                        <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                    </svg>
+                    <p>Calle 45f no. 16a -11 Bogota </p><br>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FIN  de contactenos  -->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-<!-- INICIO de seccion convenios  -->
-<section>
-    <div class="Carousel py">
-        <h1 class="text-center text-blue">Convenios</h2>
-            <div class="slick-list" id="slick-list">
-                <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev"
-                    onclick="app.processingButton(event)">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                        class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                        </path>
-                    </svg>
-                </button>
-                <div class="slick-track" id="track">
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/1aliansalud.PNG" alt="Image">
-                                </picture>
-                            </a>
+    <!-- INICIO de seccion convenios  -->
+
+    <section class="carrusel-se">
+        <div class="Carousel py">
+            <h1 class="text-center text-blue">Convenios</h2>
+                <div class="slick-list" id="slick-list">
+                    <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev"
+                        onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                            class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="slick-track" id="track">
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/1aliansalud.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/2allianz.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/3arlssura.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/4axxa.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/6bmi.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/7Captura.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/8colmedica.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/9colsanitas.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/10compensar.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/11coomeva.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/12ecopetrol.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/13epssanitas.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Shareasdsad </small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/14hdi.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/15liberty.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/16mapfre.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/17medisanitas.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/18medplus.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/19nuevaeps.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/20pac.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/21pan.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/22sanitaspremium.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/23seguros_de_vida.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
+                                    <h4><small>Share Your Message</small>Watch</h4>
+                                    <picture>
+                                        <img src="./images/convenios/24sena.PNG" alt="Image">
+                                    </picture>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/2allianz.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/3arlssura.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/4axxa.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/6bmi.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/7Captura.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/8colmedica.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/9colsanitas.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/10compensar.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/11coomeva.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/12ecopetrol.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/13epssanitas.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Shareasdsad </small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/14hdi.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/15liberty.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/16mapfre.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/17medisanitas.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/18medplus.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/19nuevaeps.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/20pac.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/21pan.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/22sanitaspremium.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/23seguros_de_vida.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slick">
-                        <div>
-                            <a href="/">
-                                <h4><small>Share Your Message</small>Watch</h4>
-                                <picture>
-                                    <img src="./images/convenios/24sena.PNG" alt="Image">
-                                </picture>
-                            </a>
-                        </div>
-                    </div>
+                    <button class="slick-arrow slick-next" id="button-next" data-button="button-next"
+                        onclick="app.processingButton(event)">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                            class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                            </path>
+                        </svg>
+                    </button>
                 </div>
-                <button class="slick-arrow slick-next" id="button-next" data-button="button-next"
-                    onclick="app.processingButton(event)">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                        class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                        </path>
-                    </svg>
-                </button>
-            </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 
 
-<!-- FIN  de seccion convenios  -->
+    <!-- FIN  de seccion convenios  -->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -682,88 +788,89 @@
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- INICIO footer  -->
-
+    <!-- footer  -->
     <footer id="footer" class="footer text-center">
         <div class="container">
             <div class="footer-inner text-white py grid">
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">Acerca de nosotros</h3>
+                    <h3 class="footer-head">Nosotros</h3>
                     <div class="icon">
-                        <img src="images/logo.png">
+                        <img src="images/Logo_blanco.png">
                     </div>
-                    <p class="text text-md">La buena nueva para su salud</p>
+                    <p class="text text-md text-center">¡Gracias por elegir Clinica Nueva para cuidar su salud!<br>
+                        Estamos aquí para apoyarle en todo lo que necesite y esperamos tener la oportunidad de servirle
+                        pronto.</p>
                     <address>
                         Clinica Nueva <br>
-                        Cl. 45f #16a - 11<br>
-                        Teusaquillo, Bogotá <br>
-                        Colombia
+                        Calle 45f # 16a - 11 <br>
+                        Barrio Palermo, Bogota <br>
                     </address>
                 </div>
 
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                    <h3 class="footer-head">tags</h3>
                     <ul class="tags-list flex">
-                        <li>Publicaciones</li>
-                        <li>Horarios</li>
-                        <li>Convenios</li>
-                        <li>Contactenos</li>
+
+                        <li>publicaciones</li>
+                        <li>horarios</li>
+                        <li>convenios</li>
+                        <li>contactenos</li>
                         <li>PQR</li>
-
                     </ul>
                 </div>
 
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">
-                        <Menu></Menu>
-                    </h3>
+                    <h3 class="footer-head">Accesos rapidos</h3>
                     <ul>
-                        <li><a href="#" class="text-white">Inicio</a></li>
-                        <li><a href="#" class="text-white">Nosotros</a></li>
-                        <li><a href="#" class="text-white">Paciente y Familia</a></li>
-                        <li><a href="#" class="text-white">Agendar cita</a></li>
-                        <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="nosotros.html" class="text-white">Nosotros</a></li>
+                        <li><a href="pacyfam.html" class="text-white">Paciente y Familia</a></li>
+                        <li><a href="agendar.html" class="text-white">Agendar cita</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-item">
-                    <h3 class="footer-head text-blue">Contactanos</h3>
+                    <h3 class="footer-head">Agenda una cita</h3>
                     <p class="text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, omnis.
                     </p>
-
-                    <i class="fas fa-envelope"></i>
-                    <span>@clinicanueva.com</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+003 478 2834(00)</span>
-                    </li>
+                    <ul class="appointment-info">
+                        <li>8:00 AM - 11:00 AM</li>
+                        <li>2:00 PM - 05:00 PM</li>
+                        <li>8:00 PM - 11:00 PM</li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>clinicanueva@clinicanueva.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+003 478 2834(00)</span>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-links">
                 <ul class="flex">
-                    <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
-                                class="fab fa-facebook-f"></i></a></li>
                     <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
-                                class="fab fa-twitter"></i></a></li>
+                                class="fab fa-facebook-f"></i></a></li>
                     <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
                                 class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                            class="text-white flex"> <i class="fab fa-youtube"></i></a></li>
                 </ul>
             </div>
         </div>
     </footer>
+    <!-- end of footer  -->
 
     <!-- FIN  de footer  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- custom js -->
+    <script src="js/search.js"></script>
     <script src="js/script.js"></script>
     <script src="js/scriptcarrousel.js"></script>
-
-
 
 </body>
 

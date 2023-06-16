@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Nueva / index</title>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- normalize css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jquery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
+
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185"
+        language-code="en" chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+    
+    </df-messenger>
+    <!-- INICIO de header -->
+    <header class="header ">
+        <nav class="navbar bg-white">
+            <div class="sub-menu bg-blue">
+                <nav>
+                    <ul>
+                        <li><a href="#">Publicaciones</a></li>
+                        <li><a href="#">Horarios</a></li>
+                        <li><a href="#">Convenios</a></li>
+                        <li><a href="#">Contactenos</a></li>
+                        <li><a href="#">PQR</a></li>
+                    </ul>
+                    <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
+                        class="sub-menu_btn">Pagos</button>
+                </nav>
+            </div>
+            <div class="container flex">
+                <a href="index.html" class="navbar-brand">
+                    <img src="" alt="Logo Clinica">
+                </a>
+                <button type="button" class="navbar-show-btn">
+                    <img src="images/ham-menu-icon.png">
+                </button>
+
+                <div class="navbar-collapse bg-blue ">
+                    <button type="button" class="navbar-hide-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
+                            height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 13v.01" />
+                            <path d="M4 9v.01" />
+                            <path d="M4 5v.01" />
+                            <path d="M17 20l3 -3l-3 -3" />
+                            <path d="M4 17h16" />
+                        </svg>
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link ">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="nosotros.html" class="nav-link active">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        </li>
+                    </ul>
+                    <button class="agendar-btn">Agendar cita</button>
+                    <div class="search-bar">
+                        <form>
+                            <div class="search-bar-box flex">
+                                <span class="search-icon flex">
+                                    <img src="images/search-icon-dark.png">
+                                </span>
+                                <input type="search" class="search-control" placeholder="Buscar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de Redes sociales flotantes-->
+
+    <article class="contenedor-redes-sociales">
+        <div class="icono">
+            <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
+                    class="fa fa-facebook"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion">Seguir Facebook</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.instagram.com/clinicanueva_/" class="icono-primary color-twitter" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
+            </div>
+        </div>
+        <div class="icono">
+            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                class="icono-primary color-googleplus" target="_blank"><i class="fa fa-youtube"></i></a>
+
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- FIN de Redes sociales flotantes-->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- INICIO footer  -->
+
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <div class="footer-inner text-white py grid">
+            <div class="footer-item">
+
+                <div class="icon">
+                    <img src="images/Logo_blanco.png">
+                </div>
+
+                <address>
+                    
+                    <p>Cl. 45f #16a - 11</p>
+                    <p>Teusaquillo, Bogotá </p>
+                </address>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                <ul class="tags-list flex">
+                    <li>Publicaciones</li>
+                    <li>Horarios</li>
+                    <li>Convenios</li>
+                    <li>Contactenos</li>
+                    <li>PQR</li>
+
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="footer-head text-blue">
+                    <Menu>menu</Menu>
+                </h3>
+                <ul>
+                    <li><a href="#" class="text-white">Inicio</a></li>
+                    <li><a href="#" class="text-white">Nosotros</a></li>
+                    <li><a href="#" class="text-white">Paciente y Familia</a></li>
+                    <li><a href="#" class="text-white">Agendar cita</a></li>
+                    <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-item">
+                <h3 class="footer-head text-blue">Contactanos</h3>
+                <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con nosotros en cualquier momento.
+                </p>
+
+                <i class="fas fa-envelope"></i>
+                <span>@clinicanueva.com</span>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <span>+003 478 2834(00)</span>
+                </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <ul class="flex">
+                <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
+                            class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                            class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                            class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- FIN  de footer  -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
+
+</body>
+
+</html>
