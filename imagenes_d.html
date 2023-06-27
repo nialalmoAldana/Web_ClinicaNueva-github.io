@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Nueva</title>
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- normalize css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
+
+</head>
+
+<body>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- DialogFlow CHAT-->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="es"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+    </df-messenger>
+    <div id="dialogflow-chat-icon">
+        <img src="https://www.gstatic.com/dialogflow-console-external/cx-badge.svg" alt="Chat Icon" />
+        <div id="df-messenger-chat-background-color"> </div>
+        <div id=""></div>
+    </div>
+
+    <style>
+        df-messenger {
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #6f95ff;
+        }
+    </style>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de header -->
+
+    <header class="header ">
+        <nav class="navbar bg-white">
+
+            <div class="sub-menu bg-blue text-md">
+                <nav>
+                    <ul>
+                        <li><a href="imagenes.html">Imagenes diagnosticas</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="horarios.html">Horarios</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="convenios.html">Convenios</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="Contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="pqr.html">PQR</a></li>
+                    </ul>
+                    <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
+                        class="sub-menu_btn">Pagos</button>
+                </nav>
+            </div>
+
+            <div class="container flex">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
+                </a>
+                <button type="button" class="navbar-show-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                </button>
+                <div class="navbar-collapse bg-blue text-white ">
+                    <button type="button" class="navbar-hide-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
+                            height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 13v.01" />
+                            <path d="M4 9v.01" />
+                            <path d="M4 5v.01" />
+                            <path d="M17 20l3 -3l-3 -3" />
+                            <path d="M4 17h16" />
+                        </svg>
+                    </button>
+                    <ul class="navbar-nav">
+                        <br><br>
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link ">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="nosotros.html" class="nav-link active">Nosotros</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
+                        </li>
+                    </ul>
+                    <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
+                    <div class="buscador">
+                        <div class="search-space">
+                            <div class="lupa-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
+                            </div>
+                            <div class="input-space">
+                                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+                            </div>
+                        </div>
+                        <div class="content-search">
+                            <div class="content-table">
+                                <p>Lista de resultados:</p>
+                                <table id="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="horarios.html">horarios</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="pacyfam.html">pacientes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="contactenos.html">contactenos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="">citas</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="nosotros.html">Nosotros</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">pagos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">publicaciones</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="pqr.html">pqr</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="">imagenes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">noticias</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">ubicanos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">servicios</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">especialidades</a></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- FIN de header -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de hero -->
+
+    <section>
+        <div class="hero-nosotros hero-nosotros_imgd">
+            <div class="negro-bg text-white text-center">
+                <h1>Imagenes diagnosticas</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- fin de hero -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de contenido principal de imagenes diagnosticas -->
+
+    <section class="img_d-main">
+        <div class="contenedor_img_d">
+            <div class="intro_img_d">
+                <p class="text-center">¡Bienvenidos a nuestra plataforma de resultados de imágenes diagnósticas! <br>Aquí podrás acceder a tus
+                    resultados de manera rápida y sencilla.<br><br></p>
+                    <button class="img_d_button">Clic aquí para ver los resultados</button>
+            </div>
+            <div class="info_img_d">
+                <img src="images/imagenes_infoH.jpg" class="wide-image" alt="Imagen ancha">
+                <img src="images/imagenes_infoV.jpg" class="vertical-image" alt="Imagen vertical">
+            </div>
+        </div>
+    </section>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de footer  -->
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
+                    <h3 class="footer-head">Nosotros</h3>
+                    <div class="icon">
+                        <img src="images/Logo_blanco.png">
+                    </div>
+                    <p class="text text-md text-center">¡Gracias por elegir Clinica Nueva para cuidar su salud!<br>
+                        Estamos aquí para apoyarle en todo lo que necesite y esperamos tener la oportunidad de servirle
+                        pronto.</p>
+                    <address>
+                        Clinica Nueva <br>
+                        Calle 45f # 16a - 11 <br>
+                        Barrio Palermo, Bogota <br>
+                    </address>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">tags</h3>
+                    <ul class="tags-list flex">
+
+                        <li>publicaciones</li>
+                        <li>horarios</li>
+                        <li>convenios</li>
+                        <li>contactenos</li>
+                        <li>PQR</li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">Accesos rapidos</h3>
+                    <ul>
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="nosotros.html" class="text-white">Nosotros</a></li>
+                        <li><a href="pacyfam.html" class="text-white">Paciente y Familia</a></li>
+                        <li><a href="agendar.html" class="text-white">Agendar cita</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head">Agenda una cita</h3>
+                    <p class="text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, omnis.
+                    </p>
+                    <ul class="appointment-info">
+                        <li>8:00 AM - 11:00 AM</li>
+                        <li>2:00 PM - 05:00 PM</li>
+                        <li>8:00 PM - 11:00 PM</li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>clinicanueva@clinicanueva.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+003 478 2834(00)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <ul class="flex">
+                    <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                                class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                                class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                            class="text-white flex"> <i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- FIN  de footer  -->
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- custom js -->
+    <script src="js/search.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scriptcarrousel.js"></script>
+
+
+</body>

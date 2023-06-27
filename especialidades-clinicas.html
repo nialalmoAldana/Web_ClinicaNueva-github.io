@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinica Nueva</title>
+  <!-- Fuentes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- normalize css -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- css -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
+
+</head>
+
+<body>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="es"
+    chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+  </df-messenger>
+  <div id="dialogflow-chat-icon">
+    <img src="https://www.gstatic.com/dialogflow-console-external/cx-badge.svg" alt="Chat Icon" />
+    <div id="df-messenger-chat-background-color"> </div>
+    <div id=""></div>
+  </div>
+
+  <style>
+    df-messenger {
+      --df-messenger-send-icon: #878fac;
+      --df-messenger-user-message: #6f95ff;
+    }
+  </style>
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!-- INICIO de header -->
+
+  <header class="header ">
+    <nav class="navbar bg-white">
+
+      <div class="sub-menu bg-blue text-md">
+        <nav>
+          <ul>
+            <li><a href="imagenes.html">Imagenes diagnosticas</a></li>
+            <li><a>-</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+            <li><a>-</a></li>
+            <li><a href="horarios.html">Horarios</a></li>
+            <li><a>-</a></li>
+            <li><a href="convenios.html">Convenios</a></li>
+            <li><a>-</a></li>
+            <li><a href="Contactenos.html">Contactenos</a></li>
+            <li><a>-</a></li>
+            <li><a href="pqr.html">PQR</a></li>
+          </ul>
+          <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
+            class="sub-menu_btn">Pagos</button>
+        </nav>
+      </div>
+
+      <div class="container flex">
+        <a href="index.html" class="navbar-brand">
+          <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
+        </a>
+        <button type="button" class="navbar-show-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48" height="48"
+            viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
+        <div class="navbar-collapse bg-blue text-white ">
+          <button type="button" class="navbar-hide-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60" height="60"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 13v.01" />
+              <path d="M4 9v.01" />
+              <path d="M4 5v.01" />
+              <path d="M17 20l3 -3l-3 -3" />
+              <path d="M4 17h16" />
+            </svg>
+          </button>
+          <ul class="navbar-nav">
+            <br><br>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link ">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="nosotros.html" class="nav-link active">Nosotros</a>
+            </li>
+            <li class="nav-item ">
+              <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
+            </li>
+          </ul>
+          <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
+          <span class="search-icon flex">
+            <img src="" style="visibility: hidden; display: none;">
+          </span>
+          <div class="buscador">
+            <div class="search-space">
+              <div class="lupa-search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24"
+                  height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <circle cx="10" cy="10" r="7" />
+                  <line x1="21" y1="21" x2="15" y2="15" />
+                </svg>
+              </div>
+              <div class="input-space">
+                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+              </div>
+            </div>
+            <div class="content-search">
+              <div class="content-table">
+                <p>Lista de resultados:</p>
+                <table id="table">
+                  <thead>
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td><a class="a-search" href="#">Inicio</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="horarios.html">horarios</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="pacyfam.html">pacientes</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="contactenos.html">contactenos</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="">citas</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="nosotros.html">Nosotros</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="publicaciones.html">pagos</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="publicaciones.html">publicaciones</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="pqr.html">pqr</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="">imagenes</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="#">noticias</a></td>
+                    </tr>
+
+                    <tr>
+                      <td><a href="#">ubicanos</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">servicios</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="#">especialidades</a></td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!-- INICIO bodyhead  -->
+
+  <section>
+    <div class="hero-nosotros">
+      <div class="negro-bg text-white text-center">
+        <h1>Especialidades Clinicas</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ////////////////////////////////////////////////////////////// -->
+
+  <section class="especialidades-clinicas">
+    <div class="container-flex">
+      <div class="img-especialidad">
+        <img src="images/especialidad-MedicoQuirurgicas.png">
+      </div>
+
+      <div>
+        <div class="container_aaa">
+          <h2 class="title_aaa">Anestecia <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La especialidad de Anestesiología se dedica a la administración de anestesia durante procedimientos
+              médicos y quirúrgicos. Los anestesiólogos son expertos en el control del dolor y el mantenimiento de la
+              estabilidad fisiológica de los pacientes durante la cirugía. Su objetivo es asegurar la comodidad y
+              seguridad del paciente durante todo el proceso. Utilizando técnicas avanzadas y monitoreo constante, los
+              anestesiólogos personalizan la anestesia para cada paciente, adaptándola a sus necesidades individuales.
+              Su presencia y experiencia son fundamentales para garantizar una experiencia quirúrgica exitosa y sin
+              dolor.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Cirugia general <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>
+              La Cirugía General es una especialidad médica que abarca una amplia gama de procedimientos quirúrgicos.
+              Los cirujanos generales son expertos en el diagnóstico y tratamiento de diversas enfermedades y afecciones
+              que requieren intervención quirúrgica. Desde apendicectomías y hernias hasta cirugías de tiroides y
+              gastrointestinales, los cirujanos generales tienen habilidades versátiles y conocimientos en diferentes
+              áreas. Trabajan en estrecha colaboración con otros especialistas médicos para ofrecer atención integral a
+              los pacientes. Su objetivo principal es brindar cirugía segura y efectiva, aliviando los síntomas y
+              mejorando la calidad de vida de los pacientes.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Cirugia vascular <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Cirugía Vascular es una especialidad médica dedicada al diagnóstico y tratamiento de enfermedades que
+              afectan los vasos sanguíneos, como las arterias y las venas. Los cirujanos vasculares son expertos en el
+              manejo de trastornos como la enfermedad arterial periférica, las obstrucciones arteriales, las varices y
+              los aneurismas. Utilizando técnicas quirúrgicas avanzadas y terapias endovasculares mínimamente invasivas,
+              los cirujanos vasculares restauran el flujo sanguíneo adecuado y promueven la salud vascular. Su objetivo
+              es prevenir complicaciones graves, como el deterioro de la circulación y el riesgo de accidentes
+              cerebrovasculares o infartos. Los cirujanos vasculares desempeñan un papel crucial en el cuidado de la
+              salud cardiovascular y la mejora de la calidad de vida de los pacientes.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Dermatología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Dermatología es la especialidad médica que se enfoca en el diagnóstico y tratamiento de enfermedades
+              de la piel, cabello y uñas. Los dermatólogos son expertos en el manejo de afecciones como el acné, eczema,
+              psoriasis, cáncer de piel y enfermedades infecciosas. Su objetivo es mantener la salud de la piel y
+              mejorar la apariencia estética. A través de técnicas avanzadas y terapias dermatológicas, los dermatólogos
+              proporcionan cuidado integral para lograr una piel sana y radiante<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Dolor y cuidados paleativos <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>El manejo del dolor y los cuidados paliativos son parte fundamental de la medicina centrada en el alivio
+              del sufrimiento de pacientes con enfermedades graves o terminales. Los especialistas en cuidados
+              paliativos se enfocan en mejorar la calidad de vida de los pacientes y sus familias, brindando alivio del
+              dolor y controlando los síntomas físicos, emocionales y espirituales. Su objetivo es proporcionar atención
+              integral, apoyo emocional y acompañamiento durante todo el proceso, asegurando la comodidad y el bienestar
+              de los pacientes en cada etapa de su enfermedad.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Endocrinología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Endocrinología es la especialidad médica encargada del estudio y tratamiento de las enfermedades
+              relacionadas con el sistema endocrino, que regula las hormonas en nuestro cuerpo. Los endocrinólogos se
+              dedican a diagnosticar y tratar trastornos hormonales como la diabetes, hipotiroidismo, hipertiroidismo,
+              trastornos del crecimiento, trastornos de la glándula adrenal y desequilibrios hormonales en general. Su
+              objetivo es restablecer el equilibrio hormonal y mejorar la calidad de vida de los pacientes a través de
+              terapias hormonales y el manejo de condiciones endocrinas<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Gastroenterología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Gastroenterología es una especialidad médica que se ocupa del diagnóstico y tratamiento de
+              enfermedades que afectan el sistema digestivo, incluyendo el esófago, el estómago, el intestino delgado,
+              el intestino grueso y el hígado. Los gastroenterólogos son expertos en el manejo de trastornos como la
+              enfermedad de reflujo gastroesofágico, la enfermedad inflamatoria intestinal, la enfermedad celiaca, las
+              úlceras y los trastornos hepáticos. Utilizando técnicas avanzadas como la endoscopia, los
+              gastroenterólogos pueden diagnosticar y tratar estas condiciones, brindando alivio a los pacientes y
+              promoviendo la salud digestiva<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Medicina fisica y rehabilitación <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Medicina Física y Rehabilitación es una especialidad médica que se enfoca en el diagnóstico,
+              tratamiento y rehabilitación de personas con discapacidades físicas, lesiones musculoesqueléticas y
+              trastornos neurológicos. Los médicos especialistas en esta área trabajan en estrecha colaboración con
+              terapeutas físicos, ocupacionales y del habla para diseñar planes de tratamiento personalizados que
+              promuevan la función y la independencia. Su objetivo es ayudar a los pacientes a recuperar habilidades
+              perdidas, reducir el dolor, mejorar la movilidad y mejorar su calidad de vida en general.</p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Medicina interna <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Medicina Interna es una especialidad médica que se centra en la prevención, diagnóstico y tratamiento
+              de enfermedades en adultos. Los médicos internistas, también conocidos como internistas, son especialistas
+              en el cuidado integral de la salud, abordando una amplia gama de condiciones médicas que afectan
+              diferentes órganos y sistemas del cuerpo. Trabajan en estrecha colaboración con otros especialistas
+              médicos y utilizan enfoques basados en la evidencia para brindar atención médica personalizada y de
+              calidad. Su objetivo principal es el manejo y la promoción de la salud a largo plazo de sus pacientes, con
+              un enfoque en el bienestar general y la prevención de enfermedades.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+
+        <div class="container_aaa">
+          <h2 class="title_aaa">Neumología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Neumología es una especialidad médica dedicada al diagnóstico y tratamiento de enfermedades
+              respiratorias y trastornos pulmonares. Los neumólogos son expertos en el manejo de condiciones como el
+              asma, la enfermedad pulmonar obstructiva crónica (EPOC), la neumonía, la fibrosis pulmonar, los trastornos
+              del sueño relacionados con la respiración y el cáncer de pulmón. Utilizando técnicas de diagnóstico
+              avanzadas, como la espirometría y la broncoscopia, los neumólogos evalúan la función pulmonar y
+              desarrollan planes de tratamiento personalizados para mejorar la salud respiratoria de sus pacientes. Su
+              objetivo es prevenir complicaciones, aliviar los síntomas respiratorios y mejorar la calidad de vida de
+              las personas afectadas por enfermedades pulmonares.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+        <div class="container_aaa">
+          <h2 class="title_aaa">Neurología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Neurología es una especialidad médica que se enfoca en el diagnóstico y tratamiento de trastornos que
+              afectan el sistema nervioso central y periférico. Los neurologos son expertos en el manejo de enfermedades
+              como la migraña, el accidente cerebrovascular, la enfermedad de Parkinson, la esclerosis múltiple, la
+              epilepsia y los trastornos neuromusculares. Utilizan técnicas de diagnóstico como la resonancia magnética
+              y el electroencefalograma para evaluar la función cerebral y nerviosa. Los neurologos trabajan para
+              mejorar la calidad de vida de los pacientes, aliviar los síntomas y prevenir complicaciones
+              neurológicas<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+        <div class="container_aaa">
+          <h2 class="title_aaa">Ortopedia y traumatología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Ortopedia y Traumatología es una especialidad médica que se dedica al diagnóstico, tratamiento y
+              prevención de enfermedades y lesiones del sistema musculoesquelético. Los ortopedistas y traumatólogos
+              tratan una amplia variedad de afecciones, como fracturas óseas, luxaciones, lesiones deportivas,
+              enfermedades degenerativas de las articulaciones (como la osteoartritis), deformidades óseas y trastornos
+              musculoesqueléticos. Utilizan métodos tanto conservadores como quirúrgicos para restaurar la función y la
+              movilidad de los pacientes, mejorando su calidad de vida. Además, trabajan de manera interdisciplinaria
+              con fisioterapeutas y rehabilitadores para asegurar una recuperación integral y efectiva.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+        <div class="container_aaa">
+          <h2 class="title_aaa">Psiquiatría <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Psiquiatría es una especialidad médica que se ocupa del diagnóstico, tratamiento y prevención de los
+              trastornos mentales y emocionales. Los psiquiatras son médicos especializados en la salud mental y se
+              dedican a evaluar, diagnosticar y tratar condiciones como la depresión, la ansiedad, los trastornos
+              bipolares, los trastornos de la alimentación, los trastornos de la personalidad y la esquizofrenia, entre
+              otros. Utilizan enfoques terapéuticos, como la psicoterapia y la medicación, para ayudar a los pacientes a
+              recuperar su bienestar mental, mejorar su calidad de vida y promover la salud mental en general.<br><br>
+            </p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+        <div class="container_aaa">
+          <h2 class="title_aaa">Urología <button class="toggle-button_aaa">+</button></h2>
+          <div class="information_aaa hidden_aaa">
+            <p>La Urología es una especialidad médica que se ocupa del diagnóstico y tratamiento de enfermedades y
+              trastornos del sistema urinario y reproductor masculino. Los urólogos son expertos en el manejo de
+              condiciones como los problemas de próstata, infecciones del tracto urinario, cálculos renales, disfunción
+              eréctil, infertilidad masculina, cáncer de vejiga, riñón, próstata y testículos, entre otros. Utilizan
+              técnicas de diagnóstico avanzadas, como la ecografía, la cistoscopia y la biopsia, para evaluar y tratar
+              estas condiciones. Los urólogos también realizan procedimientos quirúrgicos, como cirugía de próstata,
+              litotricia y cirugía reconstructiva del tracto urinario. Su objetivo es brindar atención integral y
+              mejorar la salud urológica de los pacientes.<br><br></p>
+            <button class="more-info-button_aaa" onclick="window.location.href='otra_pagina.html'">Más
+              información</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--////////////////////////////////////////////////////////////////////-->
+
+  <section class="boton_especialidades-contact bg-blue">
+    <p style="padding: 2rem; max-width: 1200px; text-align: center; font-size: 18px; color: white;">Si necesitas atención
+      especializada, no dudes en explorar nuestras especialidades y contactarnos para programar una consulta. Estamos
+      aquí para ayudarte en tu camino hacia una vida saludable y plena.</p>
+    <button onclick="window.location.href='contactenos.html'" class="more-info-button_aaa btn_contact-especialidades">
+      Contactenos</button>
+  </section>
+
+  <!--////////////////////////////////////////////////////////////////////-->
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

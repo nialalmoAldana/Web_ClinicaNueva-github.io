@@ -22,40 +22,55 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185"
-        language-code="en" chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
-    
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="en"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
     </df-messenger>
+
     <!-- INICIO de header -->
+
     <header class="header ">
         <nav class="navbar bg-white">
-            <div class="sub-menu bg-blue">
+
+            <div class="sub-menu bg-blue text-md">
                 <nav>
                     <ul>
+                        <li><a href="imagenes.html">Imagenes diagnosticas</a></li>
+                        <li><a>-</a></li>
                         <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a>-</a></li>
                         <li><a href="horarios.html">Horarios</a></li>
+                        <li><a>-</a></li>
                         <li><a href="convenios.html">Convenios</a></li>
-                        <li><a href="contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="Contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
                         <li><a href="pqr.html">PQR</a></li>
                     </ul>
                     <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
                         class="sub-menu_btn">Pagos</button>
                 </nav>
             </div>
+
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
-                    <img src="images/ham-menu-icon.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
                 </button>
-
-                <div class="navbar-collapse bg-blue ">
+                <div class="navbar-collapse bg-blue text-white ">
                     <button type="button" class="navbar-hide-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
                             height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -69,227 +84,531 @@
                         </svg>
                     </button>
                     <ul class="navbar-nav">
+                        <br><br>
                         <li class="nav-item">
                             <a href="index.html" class="nav-link ">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="nosotros.html" class="nav-link active">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
                         </li>
                     </ul>
                     <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
-                    <div class="search-bar">
-                        <form>
-                            <div class="search-bar-box flex">
-                                <span class="search-icon flex">
-                                    <img src="images/search-icon-dark.png">
-                                </span>
-                                <input type="search" class="search-control" placeholder="Buscar">
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
+                    <div class="buscador">
+                        <div class="search-space">
+                            <div class="lupa-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
                             </div>
-                        </form>
+                            <div class="input-space">
+                                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+                            </div>
+                        </div>
+                        <div class="content-search">
+                            <div class="content-table">
+                                <p>Lista de resultados:</p>
+                                <table id="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="horarios.html">horarios</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="pacyfam.html">pacientes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="contactenos.html">contactenos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="">citas</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="nosotros.html">Nosotros</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">pagos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">publicaciones</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="pqr.html">pqr</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="imagenes_d.html">imagenes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">noticias</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="#">ubicanos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">servicios</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">especialidades</a></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
-
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO hero  -->
 
     <section>
-        <div class="hero-nosotros">
+        <div class="hero-nosotros hero-nosotros_contactenoss">
             <div class="negro-bg text-white text-center">
-                <h1><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-                  </svg>Contactenos</h1>
+                <h1>Contactenos</h1>
             </div>
         </div>
     </section>
 
-     <!-- FIN hero  -->
-
-     <!--//////////////////////////////////////////////////////////////////////////////////////-->
-
-<section class="contactenos">
-    <div class="contenedor-contactenos">
-        <div class="formulario-contactenos">
-            <form action="" method="post">
-                <label for="nombre">Nombre *</label>
-                <input type="text" id="nombre" name="nombre" required>
-        
-                <label for="apellido1">Primer apellido *</label>
-                <input type="text" id="apellido1" name="apellido1" required>
-        
-                <label for="apellido2">Segundo apellido *</label>
-                <input type="text" id="apellido2" name="apellido2" required>
-        
-                <label for="email">Correo electrónico *</label>
-                <input type="email" id="email" name="email" required>
-        
-                <label for="telefono">Número de contacto *</label>
-                <input type="text" id="telefono" name="telefono" required>
-        
-                <label for="asunto">Asunto *</label>
-                <input type="text" id="asunto" name="asunto" required>
-        
-                <label for="mensaje">Mensaje *</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-        
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
-
-        <div class="contect-contactenos">
-
-        </div>
-    </div>
-</section>
-
-<script> 
-// Obtener el formulario y los campos
-const form = document.getElementById('contact-form');
-const nombre = document.getElementById('nombre');
-const apellido1 = document.getElementById('apellido1');
-const apellido2 = document.getElementById('apellido2');
-const email = document.getElementById('email');
-const telefono = document.getElementById('telefono');
-const asunto = document.getElementById('asunto');
-const mensaje = document.getElementById('mensaje');
-
-// Agregar un evento de envío al formulario
-form.addEventListener('submit', (event) => {
-  // Prevenir que el formulario se envíe automáticamente
-  event.preventDefault();
-  
-  // Verificar si los campos están completos
-  if (nombre.value === '' || apellido1.value === '' || apellido2.value === '' || email.value === '' || telefono.value === '' || asunto.value === '' || mensaje.value === '') {
-    alert('Por favor, completa todos los campos.');
-    return;
-  }
-  
-  // Enviar el formulario
-  form.submit();
-});
-</script>
-
-
-
+    <!-- FIN hero  -->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+
+    <section class="contactenos_main">
+
+        <div class="container_cont">
+
+            <!--        -->
+            <div class="left_cont">
+                <div class="menu_cont">
+                    <ul>
+                        <li onclick="showContent(1)">Llamenos</li>
+                        <li onclick="showContent(2)">Redes sociales</li>
+                        <li onclick="showContent(3)">Ubiquenos</li>
+                        <li onclick="showContent(4)">Citas</li>
+                        <li onclick="showContent(5)">Notificaciones judiciales</li>
+                        <li onclick="showContent(6)">Correo</li>
+                        <li onclick="showContent(7)">PQR</li>
+                    </ul>
+                </div>
+                <div class="lineaatencion-box">
+                    <div><img src="images/customer-service.png"></div>
+                    <div class="text-center">
+                        <p>Linea de atencion</p>
+                        <p><span>340 2002</span></p>
+                    </div>
+                </div>
+            </div>
+            <!--        -->
+
+            <div class="content">
+
+                <!--        -->
+                
+                <div class="contenedor-box" id="content1">
+                    <p class="text-center text-blue">Contactenos    /    Llamenos</p>
+                    <!--        -->
+                    <div>
+                        <div class="section_ccc">
+                            <div class="item-section_ccc">
+                                
+                                <div class="texto-section_ccc ">
+                                    <p class="text-center"><br>Estamos listos para atender todas tus consultas y brindarte elmejor servicio<br><br> 
+                                    </p>
+                                    <img src="images/contac-llamenos-PBXnum.png" class="btn-llamenos"><br>
+                
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+                            <img class="desktop-image"
+                                style="max-width: 100%; margin: 5rem 1rem;  box-shadow: 0px 0px 32px -4px rgba(0,0,0,0.1);"
+                                src="images/contact-llamenosH.png">
+
+                            <img class="mobile-image"
+                                style="width: 80%; padding: 2rem 0rem; margin: 5rem 1rem; margin: 0 auto;   box-shadow: 0px 0px 32px -4px rgba(0,0,0,0.1);"
+                                src="images/contact-llamenosV.png">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--   -->
+
+
+                <div class="contenedor-box" id="content2">
+                    <p class="text-center text-blue">Contactenos  /    Redes sociales</p>
+                    <div class="section_ccc">
+                        <div class="item-section_ccc">
+                            <div class="icon-section_ccc">
+                                <div class="icon-s">
+                                    <img src="images/facebook.png">
+                                </div>
+                            </div>
+                            <div class="texto-section_ccc text-center ">
+                                <p>Siguenos en Facebook<br></p>
+                                <p class="text-blue">ClinicaNuevaBogota<br></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section_ccc">
+        
+                        <div class="item-section_ccc text-center">
+                            <div class="icon-section_ccc text-center">
+                                <div class="icon-s">
+                                    <img src="images/instagram.png">
+                                </div>
+                            </div>
+                            <div class="texto-section_ccc text-center">
+                                <p>Siguenos en Instagram<br></p>
+                                <p class="text-blue">clinicanueva_</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section_ccc">
+                   
+                        <div class="item-section_ccc">
+                            <div class="icon-section_ccc">
+                                <div class="icon-s">
+                                    <img src="images/youtube.png">
+
+                                </div>
+                            </div>
+                            <div class="texto-section_ccc text-center ">
+                                <p>Siguenos en YouTube</a></p>
+                                <p class="text-blue">@clinicanueva2455</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--         -->
+
+                <div class="contenedor-box" id="content3">
+                    <p class="text-center text-blue">Contactenos  /    Ubiquenos</p><br>
+                    <div class="sedes">
+                       
+                        <p><span class="titulo-contact text-blue">Sede Principal</span><br><span class="text-blue">Direccion: </span>Calle 45f #16a - 11</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31813.417480060823!2d-74.09762515968116!3d4.6515403003005416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2c3ba726af%3A0x278ae06508ae1471!2sCl%C3%ADnica%20Nueva!5e0!3m2!1ses-419!2sco!4v1685727012567!5m2!1ses-419!2sco"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <p><br></p>
+                        
+                              <div style="text-align: center;"> <!-- Agrega un contenedor y aplica alineación al centro -->
+                                <a class="btn-llévame" href="https://www.google.com/maps/place/DIRECCION_DE_LA_CLINICA" target="_blank">
+                                  ¿Como llegar?
+                                </a>
+                              </div>
+                    </div>
+                    
+                            <div class="sedes">
+                       
+                                <p><span class="titulo-contact text-blue">Sede B - Quiroga</span><br><span class="text-blue">Direccion: </span>Cl. 32 Sur #21c-30</p>
+                                <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.0779834349537!2d-74.11691312421817!3d4.580017742690256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f98d05a23a7db%3A0x25d88a4fffbe0605!2sCl.%2032%20Sur%20%2321c-30%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1685727403770!5m2!1ses-419!2sco"
+                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <p><br></p>
+                                
+                                      <div style="text-align: center;"> <!-- Agrega un contenedor y aplica alineación al centro -->
+                                        <a class="btn-llévame" href="https://www.google.com/maps/place/DIRECCION_DE_LA_CLINICA" target="_blank">
+                                          ¿Como llegar?
+                                        </a>
+                                      </div>
+                            </div>
+                    <style>
+                        .btn-llévame {
+                          display: inline-block;
+                          padding: 10px 20px;
+                          background-color: #1988f0;
+                          color: #fff;
+                          text-decoration: none;
+                          border-radius: 1px;
+                          font-weight: bold;
+                          margin: 0 auto
+                        }
+                      
+                        .btn-llévame:hover {
+                          background-color: #004AAD;
+                        }
+                      </style>
+                      
+                      
+                </div>
+
+                <!--        -->
+
+                <div class="contenedor-box text-center titulo-section_ccc" id="content4">
+                    <p class="text-center text-blue">Contactenos  /    Citas</p><br>
+                    <p class="titulo-section_ccc ">Nuestros canales de comunicación para las citas médicas son <br><br>
+                    <p>
+                    
+                    <p class="text-blue">
+                    <a href="https://tu_link_de_whatsapp_aqui" class="whatsapp-button">
+                        <img src="images/contact-btn-whatsapp.png"
+                            alt="WhatsApp">
+                    </a>
+                    </p>
+                    <p class="text-blue"><br> o Llamanos <br>
+                        <a href="https://tu_link_de_whatsapp_aqui" class="whatsapp-button">
+                            <img src="images/contact-btn-llamanoscitas.png"
+                                alt="WhatsApp">
+                        </a>
+                    </p>
+                 
+                </div>
+
+                <!--        -->
+
+                <div class="contenedor-box" id="content5">
+                    <p class="text-center text-blue">Contactenos  /    Notificaciones judiciales</p>
+                    <div class="box_contenedor">
+                        <div class="icon-s">
+                           
+                        </div>
+                        <div>
+                            <p class="titulo-section_ccc text-center">Utilice este correo exclusivamente para envío de
+                                notificaciones legales. Agradecemos su colaboración y estaremos atentos a su
+                                comunicación.
+                                <br><br>
+                            </p>
+                            <img style="max-width: 500px;" src="images/contact-btn-correo.png"><br><br><br>
+                           
+                            
+                            <div>
+
+                                <img class="desktop-image"
+                                    style="max-width: 1000px; margin: 5rem 1rem;  box-shadow: 0px 0px 32px -4px rgba(0,0,0,0.1);"
+                                    src="images/contact-judicialH.png">
     
+                                <img class="mobile-image"
+                                    style="width: 80%; padding: 2rem 0rem; margin: 5rem 1rem; margin: 0 auto;   box-shadow: 0px 0px 32px -4px rgba(0,0,0,0.1);"
+                                    src="images/contact-judicialV.png">
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--        -->
+
+                <div class="contenedor-box" id="content6">
+                 <div class="box_contenedor">
+
+
+                 </div>
+                </div>
+
+                <!--        -->
+
+                <div class="contenedor-box" id="content7">
+                    <div class="box_contenedor">
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <script>
+        function showImageComparison(desktopImage, mobileImage) {
+          function updateImageVisibility() {
+            if (window.innerWidth <= 480) {
+              desktopImage.style.display = 'none';
+              mobileImage.style.display = 'block';
+            } else {
+              desktopImage.style.display = 'block';
+              mobileImage.style.display = 'none';
+            }
+          }
+      
+          updateImageVisibility();
+      
+          window.addEventListener('resize', function () {
+            updateImageVisibility();
+          });
+        }
+      
+        document.addEventListener("DOMContentLoaded", function () {
+          var desktopImage = document.querySelector('#content1 .desktop-image');
+          var mobileImage = document.querySelector('#content1 .mobile-image');
+          showImageComparison(desktopImage, mobileImage);
+      
+          desktopImage = document.querySelector('#content5 .desktop-image');
+          mobileImage = document.querySelector('#content5 .mobile-image');
+          showImageComparison(desktopImage, mobileImage);
+        });
+      </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Seleccionar automáticamente la primera opción y mostrar su contenido
+        showContent(1);
+    });
+
+    function showContent(index) {
+        var contentDivs = document.querySelectorAll('.content .contenedor-box');
+        contentDivs.forEach(function (div) {
+            div.style.display = 'none';
+        });
+        document.getElementById('content' + index).style.display = 'block';
+    }
+</script>
+    <!-- 
+
+                </div>
+
+                <div class="content-box" id="content2">
+
+                </div>
+
+                <div class="content-box" id="content3">
+
+                </div>
+
+                <div class="content-box" id="content4">
+
+                </div>
+
+                <div class="content-box" id="content5">
+
+                </div>
+
+                <div class="content-box" id="content6">
+
+                </div>
+
+                <div class="content-box" id="content7">
+
+                </div>
+                -->
+
+
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
-
-    <!-- INICIO de Redes sociales flotantes-->
-
-    <article class="contenedor-redes-sociales">
-        <div class="icono">
-            <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
-                    class="fa fa-facebook"></i></a>
-
-            <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion">Seguir Facebook</a>
-            </div>
-        </div>
-        <div class="icono">
-            <a href="https://www.instagram.com/clinicanueva_/" class="icono-primary color-twitter" target="_blank"><i
-                    class="fa fa-instagram"></i></a>
-
-            <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
-            </div>
-        </div>
-        <div class="icono">
-            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
-                class="icono-primary color-googleplus" target="_blank"><i class="fa fa-youtube"></i></a>
-
-            <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
-            </div>
-        </div>
-    </article>
 
     <!-- FIN de Redes sociales flotantes-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-<!-- INICIO footer  -->
+    <!-- INICIO footer  -->
 
-<footer id="footer" class="footer text-center">
-    <div class="container">
-        <div class="footer-inner text-white py grid">
-            <div class="footer-item">
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
 
-                <div class="icon">
-                    <img src="images/Logo_blanco.png">
+                    <div class="icon">
+                        <img src="images/Logo_blanco.png">
+                    </div>
+
+                    <address>
+
+                        <p>Cl. 45f #16a - 11</p>
+                        <p>Teusaquillo, Bogotá </p>
+                    </address>
                 </div>
 
-                <address>
-                    
-                    <p>Cl. 45f #16a - 11</p>
-                    <p>Teusaquillo, Bogotá </p>
-                </address>
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                    <ul class="tags-list flex">
+                        <li>Publicaciones</li>
+                        <li>Horarios</li>
+                        <li>Convenios</li>
+                        <li>Contactenos</li>
+                        <li>PQR</li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">
+                        <Menu>menu</Menu>
+                    </h3>
+                    <ul>
+                        <li><a href="#" class="text-white">Inicio</a></li>
+                        <li><a href="#" class="text-white">Nosotros</a></li>
+                        <li><a href="#" class="text-white">Paciente y Familia</a></li>
+                        <li><a href="#" class="text-white">Agendar cita</a></li>
+                        <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Contactanos</h3>
+                    <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con
+                        nosotros en cualquier momento.
+                    </p>
+
+                    <i class="fas fa-envelope"></i>
+                    <span>@clinicanueva.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+003 478 2834(00)</span>
+                    </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">Accesos rapidos</h3>
-                <ul class="tags-list flex">
-                    <li>Publicaciones</li>
-                    <li>Horarios</li>
-                    <li>Convenios</li>
-                    <li>Contactenos</li>
-                    <li>PQR</li>
-
-                </ul>
-            </div>
-
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">
-                    <Menu>menu</Menu>
-                </h3>
-                <ul>
-                    <li><a href="#" class="text-white">Inicio</a></li>
-                    <li><a href="#" class="text-white">Nosotros</a></li>
-                    <li><a href="#" class="text-white">Paciente y Familia</a></li>
-                    <li><a href="#" class="text-white">Agendar cita</a></li>
-                    <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">Contactanos</h3>
-                <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con nosotros en cualquier momento.
-                </p>
-
-                <i class="fas fa-envelope"></i>
-                <span>@clinicanueva.com</span>
-                </li>
-                <li>
-                    <i class="fas fa-phone"></i>
-                    <span>+003 478 2834(00)</span>
-                </li>
+            <div class="footer-links">
+                <ul class="flex">
+                    <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
+                                class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                                class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-links">
-            <ul class="flex">
-                <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
-                            class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
-                            class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
-                            class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-<!-- FIN  de footer  -->
+    <!-- FIN  de footer  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 

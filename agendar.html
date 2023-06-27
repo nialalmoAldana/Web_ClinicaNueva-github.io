@@ -5,13 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinica Nueva / index</title>
+    <title>Clinica Nueva - Agendar</title>
     <!-- Fuentes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- normalize css -->
@@ -19,43 +17,158 @@
     <!-- css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
     <link rel="shortcut icon" href="images/logoOnly.png" type="image/png">
 
+
+
+    <style>
+        .fomulario-agendardiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .form-agendar {
+            max-width: 450px;
+            margin: 0 auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+
+        .form-agendar p {
+            text-align: center;
+            font-size: 25px;
+            line-height: 17px;
+        }
+
+        .form-agendar span {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .titulo-texto_Ag {
+            padding: 1rem;
+        }
+
+        .form-agendar input[type="text"],
+        .form-agendar select,
+        .form-agendar input[type="date"],
+        .form-agendar input[type="email"],
+        .form-agendar input[type="tel"] {
+            width: 100%;
+            padding: 2px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: rgb(71, 71, 71);
+            font-size: 14px;
+        }
+
+        .form-agendar select {
+            appearance: none;
+            -webkit-appearance: none;
+            padding-right: 25px;
+            background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-chevron-down-512.png') no-repeat center right;
+            background-size: 15px;
+           
+        }
+
+        .form-agendar input[type="submit"] {
+            background-color: #1e79e0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-agendar label {
+            color: #9b9b9b;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .form-agendar input[type="checkbox"] {
+            margin-bottom: 15px;
+        }
+
+        .privacy-policy {
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .form-agendar {
+                max-width: 400px;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-image {
+                display: block;
+                /* Asegura que la imagen se muestre */
+            }
+
+            .desktop-image {
+                display: none;
+                /* Asegura que la imagen original se oculte */
+            }
+        }
+         
+    </style>
 </head>
 
 <body>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185"
-        language-code="en" chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
-    
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="en"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
+
     </df-messenger>
     <!-- INICIO de header -->
     <header class="header ">
         <nav class="navbar bg-white">
-            <div class="sub-menu bg-blue">
+
+            <div class="sub-menu bg-blue text-md">
                 <nav>
                     <ul>
+                        <li><a href="imagenes_d.html">Imagenes diagnosticas</a></li>
+                        <li><a>-</a></li>
                         <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a>-</a></li>
                         <li><a href="horarios.html">Horarios</a></li>
+                        <li><a>-</a></li>
                         <li><a href="convenios.html">Convenios</a></li>
-                        <li><a href="contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="Contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
                         <li><a href="pqr.html">PQR</a></li>
                     </ul>
                     <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
                         class="sub-menu_btn">Pagos</button>
                 </nav>
             </div>
+
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
-                    <img src="images/ham-menu-icon.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
                 </button>
-
-                <div class="navbar-collapse bg-blue ">
+                <div class="navbar-collapse bg-blue text-white ">
                     <button type="button" class="navbar-hide-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
                             height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -69,25 +182,31 @@
                         </svg>
                     </button>
                     <ul class="navbar-nav">
+                        <br><br>
                         <li class="nav-item">
                             <a href="index.html" class="nav-link ">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="nosotros.html" class="nav-link active">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
                         </li>
                     </ul>
-                    <button class="agendar-btn">Agendar cita</button>
+                    <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
                     <div class="buscador">
                         <div class="search-space">
                             <div class="lupa-search">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="10" cy="10" r="7" />
                                     <line x1="21" y1="21" x2="15" y2="15" />
-                                  </svg>
+                                </svg>
                             </div>
                             <div class="input-space">
                                 <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
@@ -109,39 +228,39 @@
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">horarios</a></td>
+                                            <td><a href="horarios.html">horarios</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pacientes</a></td>
+                                            <td><a href="pacyfam.html">pacientes</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">contactenos</a></td>
+                                            <td><a href="contactenos.html">contactenos</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">citas</a></td>
+                                            <td><a href="">citas</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">Nosotros</a></td>
+                                            <td><a href="nosotros.html">Nosotros</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pagos</a></td>
+                                            <td><a href="publicaciones.html">pagos</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">publicaciones</a></td>
+                                            <td><a href="publicaciones.html">publicaciones</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pqr</a></td>
+                                            <td><a href="pqr.html">pqr</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">imagenes</a></td>
+                                            <td><a href="">imagenes</a></td>
                                         </tr>
 
                                         <tr>
@@ -158,6 +277,7 @@
                                             <td><a href="#">especialidades</a></td>
                                         </tr>
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>
@@ -173,138 +293,99 @@
     <!-- INICIO footer  -->
 
     <section>
-        <div class="hero-nosotros">
+        <div class="hero-nosotros hero-nosotros_agendar">
             <div class="negro-bg text-white text-center">
-                <h1><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" width="52"
-                        height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <rect x="4" y="5" width="16" height="16" rx="2" />
-                        <line x1="16" y1="3" x2="16" y2="7" />
-                        <line x1="8" y1="3" x2="8" y2="7" />
-                        <line x1="4" y1="11" x2="20" y2="11" />
-                        <line x1="11" y1="15" x2="12" y2="15" />
-                        <line x1="12" y1="15" x2="12" y2="18" />
-                    </svg>Agendar</h1>
+                <h1>Agendar</h1>
             </div>
         </div>
     </section>
 
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
     <div class="wrapper">
+
         <div class="contact-info">
-            <h1 class="text-blue text-shadow">Contáctanos</h1>
-            <h2 class="text-center">Para agendar tu cita, contáctanos a través de los siguientes medios:</h2>
-            <ul>
-                <li>Teléfono: +60 (1) 327 4444 opcion 2</li>
-                <li>Correo electrónico: clinicanueva@clinicanueva.com</li>
-                <button class="btn-agendar_wpp"></button>
-            </ul>
-            <button class="agendar-btn">Llamar ahora</button>
+
+            <p class="text-center" style="font-size: 25px;"><br><br>Para agendar tu cita, contáctanos a través de los
+                siguientes medios<br><br></h2>
+
+            <div class="medios-citas">
+                <img style="width: 70%;" src="images/btn-citas_llamanos.png">
+            </div>
+
+            <div class="medios-citas">
+                <img style="width: 70%; padding: 2rem 0rem;" src="images/contact-btn-whatsapp.png">
+            </div>
+
+            <div>
+                <br><br>
+                <img class="desktop-image"
+                    style="width: 100%; margin: 5rem 1rem;  box-shadow: 0 2px 5px 0 rgba(102, 102, 102, 0.726);"
+                    src="images/agendar-H.png">
+
+                <img class="mobile-image"
+                    style="width: 80%; padding: 2rem 0rem; margin: 5rem 1rem; margin: 0 auto;  box-shadow: 0 2px 5px 0 rgba(102, 102, 102, 0.726);"
+                    src="images/agendar-V.png">
+
+            </div>
         </div>
-        <div class="form text-shadow">
-            <form>
-                <h2 class="text-blue text-center">Agenda tu cita</h2>
-                <p class="text-center">Si deseas agendar una cita, déjanos tus datos básicos y un profesional de la
-                    Clínica te contactará.</p>
 
-                <div class="name">
-                    <div>
-                        <label for="first-name">Primer Nombre:</label>
-                        <input type="text" id="first-name" name="first-name" required>
-                    </div>
-                    <div>
-                        <label for="last-name">Primer Apellido:</label>
-                        <input type="text" id="last-name" name="last-name" required>
-                    </div>
-                </div>
-                <div class="name">
-                    <div>
-                        <label for="second-name">Segundo Nombre:</label>
-                        <input type="text" id="second-name" name="second-name">
-                    </div>
-                    <div>
-                        <label for="second-last-name">Segundo Apellido:</label>
-                        <input type="text" id="second-last-name" name="second-last-name">
-                    </div>
-                </div>
-                <div class="doc-info">
-                    <div>
-                        <label for="document-type">Tipo de Documento:</label>
-                        <select id="document-type" name="document-type" required>
-                            <option value="cc">Cédula de Ciudadanía</option>
-                            <option value="ce">Cédula de Extranjería</option>
-                            <option value="ti">Tarjeta de Identidad</option>
-                            <option value="rc">Registro Civil</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="document-number">Número de Documento:</label>
-                        <input type="text" id="document-number" name="document-number" required>
-                    </div>
-                </div>
-                <div class="birthdate">
-                    <div>
-                        <label for="birthdate">Fecha de Nacimiento:</label>
-                        <input type="date" id="birthdate1" name="birthdate" required>
-                    </div>
-                    <div>
-                        <label for="center">Centro de Atención:</label>
-                        <select id="center" name="center" required>
-                            <option value="1">Centro Médico Principal</option>
-                            <option value="2">Clínica Especializada</option>
-                            <option value="3">Hospital General</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="phone">
-                    <div>
-                        <label for="phone">Celular del Paciente:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div>
-                        <label for="alternate-phone">Celular Alternativo:</label>
-                        <input type="tel" id="alternate-phone" name="alternate-phone">
-                    </div>
-                </div>
-                <div>
-                    <label for="insurance">Aseguradora del Paciente:</label>
-                    <select id="insurance" name="insurance" required>
-                        <option value="1">Seguro Social</option>
-                        <option value="2">Seguro Privado</option>
-                        <option value="3">Particular</option>
+
+        <div class="fomulario-agendardiv">
+
+            <form class="form-agendar" action="#" method="POST">
+                <p class="text-blue titulo-texto_Ag">Formulario de registro<br></p>
+                <p><span class="text-center">Si deseas agendar una cita, déjanos tus datos básicos y un profesional de
+                        la
+                        Clínica te contactará.<br><br></span></p>
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+
+                <div class="select-wrapper">
+                    <select id="tipo_documento" name="tipo_documento" required>
+                        <option value="">Tipo de documento</option>
+                        <option value="dni">DNI</option>
+                        <option value="cedula">Cédula</option>
+                        <option value="pasaporte">Pasaporte</option>
                     </select>
                 </div>
-                <div>
-                    <label for="specialty">Especialidad:</label>
-                    <select id="specialty" name="specialty" required>
-                        <option value="1">Medicina General</option>
-                        <option value="2">Pediatría</option>
-                        <option value="3">Cardiología</option>
-                    </select>
-                </div>
-                <div class="checkbox">
 
-                    <label for="privacy-policy"><input type="checkbox" id="privacy-policy" name="privacy-policy"
-                            required> He leído y acepto la política de privacidad y tratamiento de
-                        datos</label>
-                </div>
-                <div class="submit">
-                    <button type="submit">Agendar Cita</button>
-                </div>
+                <label for="numero_documento">Número de Documento:</label>
+                <input type="text" id="numero_documento" name="numero_documento" required>
+
+                <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+                <label for="centro_atencion">Centro de Atención:</label>
+                <input type="text" id="centro_atencion" name="centro_atencion" required>
+
+                <label for="correo_electronico">Correo Electrónico:</label>
+                <input type="email" id="correo_electronico" name="correo_electronico" required>
+
+                <label for="celular_paciente">Celular del Paciente:</label>
+                <input type="tel" id="celular_paciente" name="celular_paciente" required>
+
+                <label for="aseguradora_paciente">Aseguradora del Paciente:</label>
+                <input type="text" id="aseguradora_paciente" name="aseguradora_paciente" required>
+
+                <input type="checkbox" id="politica_privacidad" name="politica_privacidad" required>
+                <label for="politica_privacidad" class="privacy-policy">He leído y acepto la política de privacidad y
+                    tratamiento de datos personales</label>
+
+                <input type="submit" value="Enviar">
             </form>
 
         </div>
     </div>
 
 
-<!--//////////////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO de Redes sociales flotantes-->
-
+<!--
     <article class="contenedor-redes-sociales">
         <div class="icono">
             <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
@@ -331,91 +412,114 @@
             </div>
         </div>
     </article>
-
+-->
     <!-- FIN de Redes sociales flotantes-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-   <!-- INICIO footer  -->
+    <!-- INICIO footer  -->
 
-   <footer id="footer" class="footer text-center">
-    <div class="container">
-        <div class="footer-inner text-white py grid">
-            <div class="footer-item">
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
 
-                <div class="icon">
-                    <img src="images/Logo_blanco.png">
+                    <div class="icon">
+                        <img src="images/Logo_blanco.png">
+                    </div>
+
+                    <address>
+
+                        <p>Cl. 45f #16a - 11</p>
+                        <p>Teusaquillo, Bogotá </p>
+                    </address>
                 </div>
 
-                <address>
-                    
-                    <p>Cl. 45f #16a - 11</p>
-                    <p>Teusaquillo, Bogotá </p>
-                </address>
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                    <ul class="tags-list flex">
+                        <li>Publicaciones</li>
+                        <li>Horarios</li>
+                        <li>Convenios</li>
+                        <li>Contactenos</li>
+                        <li>PQR</li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">
+                        <Menu>menu</Menu>
+                    </h3>
+                    <ul>
+                        <li><a href="#" class="text-white">Inicio</a></li>
+                        <li><a href="#" class="text-white">Nosotros</a></li>
+                        <li><a href="#" class="text-white">Paciente y Familia</a></li>
+                        <li><a href="#" class="text-white">Agendar cita</a></li>
+                        <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Contactanos</h3>
+                    <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con
+                        nosotros en cualquier momento.
+                    </p>
+
+                    <i class="fas fa-envelope"></i>
+                    <span>@clinicanueva.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+003 478 2834(00)</span>
+                    </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">Accesos rapidos</h3>
-                <ul class="tags-list flex">
-                    <li>Publicaciones</li>
-                    <li>Horarios</li>
-                    <li>Convenios</li>
-                    <li>Contactenos</li>
-                    <li>PQR</li>
-
-                </ul>
-            </div>
-
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">
-                    <Menu>menu</Menu>
-                </h3>
-                <ul>
-                    <li><a href="#" class="text-white">Inicio</a></li>
-                    <li><a href="#" class="text-white">Nosotros</a></li>
-                    <li><a href="#" class="text-white">Paciente y Familia</a></li>
-                    <li><a href="#" class="text-white">Agendar cita</a></li>
-                    <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">Contactanos</h3>
-                <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con nosotros en cualquier momento.
-                </p>
-
-                <i class="fas fa-envelope"></i>
-                <span>@clinicanueva.com</span>
-                </li>
-                <li>
-                    <i class="fas fa-phone"></i>
-                    <span>+003 478 2834(00)</span>
-                </li>
+            <div class="footer-links">
+                <ul class="flex">
+                    <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
+                                class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                                class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-links">
-            <ul class="flex">
-                <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
-                            class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
-                            class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
-                            class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-<!-- FIN  de footer  -->
+    <!-- FIN  de footer  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- custom js -->
     <script src="js/script.js"></script>
     <script src="js/search.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var desktopImage = document.querySelector('.desktop-image');
+            var mobileImage = document.querySelector('.mobile-image');
+
+            function updateImageVisibility() {
+                if (window.innerWidth <= 480) {
+                    desktopImage.style.display = 'none';
+                    mobileImage.style.display = 'block';
+                } else {
+                    desktopImage.style.display = 'block';
+                    mobileImage.style.display = 'none';
+                }
+            }
+
+            updateImageVisibility();
+
+            window.addEventListener('resize', function () {
+                updateImageVisibility();
+            });
+        });
+    </script>
 
 </body>
 

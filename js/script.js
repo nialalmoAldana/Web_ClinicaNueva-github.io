@@ -91,39 +91,11 @@ window.addEventListener('scroll', onScroll);
 
 //-------------------------------------------------------------------------------------
 
-function toggleInfo() {
-  const mission = document.getElementById("misiondiv");
-  const vision = document.getElementById("visiondiv");
-  const btn = document.getElementById("btn-toggle");
-  if (mission.style.display === "none") {
-    mission.style.display = "block";
-    vision.style.display = "none";
-    btn.textContent = "ver visión";
-  } else {
-    mission.style.display = "none";
-    vision.style.display = "block";
-    btn.textContent = "ver misión";
-  }
-}
 
 
 //----------banner---------------------------------------------------------------------------
 
-function openModal(modalId) {
-  var modal = document.getElementById(modalId);
-  modal.style.display = "block";
-}
 
-function closeModal(event, modalId) {
-  if (event.target === event.currentTarget) {
-    var modal = document.getElementById(modalId);
-    modal.style.display = "none";
-  }
-}
-
-window.onload = function() {
-  openModal('modal-horario');
-}
 //----------banner---------------------------------------------------------------------------
 
 var carousel = document.querySelector(".carousel");
@@ -139,8 +111,4 @@ function changeImage() {
   images[currentIndex].classList.add("active");
 }
 //----------banner---------------------------------------------------------------------------
-
-
-
-
 

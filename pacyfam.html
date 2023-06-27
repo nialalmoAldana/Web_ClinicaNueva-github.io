@@ -25,73 +25,65 @@
 </head>
 
 <body>
-<!--//////////////////////////////////////////////////////////////////////////////////////-->
-
-    <!-- INICIO de Redes sociales flotantes-->
-
-    <article class="contenedor-redes-sociales">
-        <div class="icono">
-            <a href="https://www.facebook.com/ClinicaNuevaBogota/" class="icono-primary" target="_blank"><i
-                    class="fa fa-facebook"></i></a>
-
-            <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion">Seguir Facebook</a>
-            </div>
-        </div>
-        <div class="icono">
-            <a href="https://www.instagram.com/clinicanueva_/" class="icono-primary color-twitter" target="_blank"><i
-                    class="fa fa-instagram"></i></a>
-
-            <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
-            </div>
-        </div>
-        <div class="icono">
-            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
-                class="icono-primary color-googleplus" target="_blank"><i class="fa fa-youtube"></i></a>
-
-            <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
-            </div>
-        </div>
-    </article>
-
-    <!-- FIN de Redes sociales flotantes-->
-
-    <!--//////////////////////////////////////////////////////////////////////////////////////-->
-
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185"
-        language-code="en" chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
-    
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="es"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
     </df-messenger>
-    <!-- INICIO de header -->
-    <header class="header ">
+    <div id="dialogflow-chat-icon">
+        <img src="https://www.gstatic.com/dialogflow-console-external/cx-badge.svg" alt="Chat Icon" />
+        <div id="df-messenger-chat-background-color"> </div>
+        <div id=""></div>
+    </div>
 
+    <style>
+        df-messenger {
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #6f95ff;
+        }
+    </style>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de header -->
+
+    <header class="header ">
         <nav class="navbar bg-white">
-            <div class="sub-menu bg-blue">
+
+            <div class="sub-menu bg-blue text-md">
                 <nav>
                     <ul>
+                        <li><a href="imagenes_d.html">Imagenes diagnosticas</a></li>
+                        <li><a>-</a></li>
                         <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a>-</a></li>
                         <li><a href="horarios.html">Horarios</a></li>
+                        <li><a>-</a></li>
                         <li><a href="convenios.html">Convenios</a></li>
-                        <li><a href="contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="Contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
                         <li><a href="pqr.html">PQR</a></li>
                     </ul>
                     <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
-                    class="sub-menu_btn">Pagos</button>
+                        class="sub-menu_btn">Pagos</button>
                 </nav>
-
             </div>
+
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
-                    <img src="images/ham-menu-icon.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
                 </button>
-
-                <div class="navbar-collapse bg-blue ">
+                <div class="navbar-collapse bg-blue text-white ">
                     <button type="button" class="navbar-hide-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
                             height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -105,27 +97,31 @@
                         </svg>
                     </button>
                     <ul class="navbar-nav">
+                        <br><br>
                         <li class="nav-item">
                             <a href="index.html" class="nav-link ">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="nosotros.html" class="nav-link active">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
                         </li>
                     </ul>
-
                     <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
-                    
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
                     <div class="buscador">
                         <div class="search-space">
                             <div class="lupa-search">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <circle cx="10" cy="10" r="7" />
                                     <line x1="21" y1="21" x2="15" y2="15" />
-                                  </svg>
+                                </svg>
                             </div>
                             <div class="input-space">
                                 <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
@@ -143,64 +139,73 @@
 
                                     <tbody>
                                         <tr>
-                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                            <td><a class="a-search" href="index.html">Inicio</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">horarios</a></td>
+                                            <td><a href="horarios.html">horarios</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pacientes</a></td>
+                                            <td><a href="pacyfam.html">pacientes</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">contactenos</a></td>
+                                            <td><a href="contactenos.html">contactenos</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">citas</a></td>
+                                            <td><a href="agendar.html">citas</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">Nosotros</a></td>
+                                            <td><a href="nosotros.html">Nosotros</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pagos</a></td>
+                                            <td><a href="publicaciones.html">pagos</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">publicaciones</a></td>
+                                            <td><a href="publicaciones.html">publicaciones</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pqr</a></td>
+                                            <td><a href="pqr.html">pqr</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">imagenes</a></td>
+                                            <td><a href="imagenes_d.html">imagenes</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">noticias</a></td>
+                                            <td><a href="publicaciones.html">noticias</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">ubicanos</a></td>
+                                            <td><a href="contactenos.html">ubicanos</a></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">servicios</a></td>
+                                            <td><a href="pqr.html">quejas</a></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">especialidades</a></td>
+                                            <td><a href="pqr.html">reclamos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href=nosotros.html">historia</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="nosotros.html">mision</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="nosotros.html">vision</a></td>
                                         </tr>
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </nav>
@@ -208,227 +213,160 @@
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
+<section class="mantenimiento">
 
-    <!--/////////////////////////////////////////////////////////////////////////////////////-->
-
-    <section>
-        <div class="hero-nosotros">
-           <div class="negro-bg text-white text-center"><h1><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <circle cx="9" cy="7" r="4" />
-            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
-          </svg>Paciente y familia</h1></div>
-        </div>
-    </section>
-
-
-    <section class="pacyfam_intro ">
-        <h2 class="text-blue text-center">¡Bienvenidos a nuestra sección para pacientes y familiares!<br><br></h2>
-        <div class="flex-container">
-            <div class="flex-item-1">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/WU2u88zuKZE"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="flex-item-2 text-shadow">
-           <p>      Aquí encontrarán información útil y educativa para entender mejor su salud y el cuidado que
-                    ofrecemos en nuestra clínica. Nuestro objetivo es ayudarles a tomar decisiones informadas y estar al
-                    tanto de las últimas novedades en cuanto a tratamientos y cuidados médicos.</p>
+    <div class="contenedor-mantenimiento">
+       
+        <div class="img-mantenimiento"><img src="images/mantenimiento.png" style="max-width: 450px;"></div>
+        <div class="text-mantenimiento"><br><h1 class="text-blue text">Sitio web en construccion</h1><br>
+            <p>Nos encontramos trabajando arduamente para proporcionarte la mejor información.<br > Pronto encontrarás contenido nuevo y emocionante en nuestra página. <br></p>
+            <div class="text-sub-mantenimiento">
+            <p class="text-blue text-center">¡Vuelve pronto para descubrirlo!</p>
             </div>
         </div>
-    </section>
- 
-    <div class="linea-separadora"></div>
-
-    <section class="pyf py">
-     
-        <div class="container-noticias-pyf">
-            
-            <h2 class="text-blue text-center">Noticias relevantes</h2>
-
-            <div class="noticias-pyf">
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/pacyfam/cuidemonos.avif" alt="Imagen de la noticia">
-                    </div>
-                    <div class="card-text">
-                        <h3>Cuidemonos entre nosotros</h3>
-                        <p>Le invitamos a participar en el cuidado de su salud durante el tiempo de atencion en nuestra institucion </p>
-                    </div>
-                    <button onclick="openModal('modal-recomendacion')">Leer más</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/pacyfam/caidas.jpg" alt="Imagen de la noticia">
-                    </div>
-                    <div class="card-text">
-                        <h3>Prevencion y reduccion de caidas</h3>
-                        <p>Programa de seguridad al paciente</p>
-                    </div>
-                    <button onclick="openModal('modal-prevencion01')">Leer más</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/pacyfam/paciente1.jpg" alt="Imagen de la noticia">
-                    </div>
-                    <div class="card-text">
-                        <h3>Asociación de usuarios</h3>
-                        <p>Texto breve de la noticia</p>
-                    </div>
-                    <button>Leer más</button>
-                </div>
-            </div>
-
-            
-
-            <h2 class="text-blue text-center">Derechos y deberes</h2>
-            <div class="noticias-pyf">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/pacyfam/deberes.jpg" alt="Imagen de la noticia">
-                    </div>
-                    <div class="card-text">
-                        <h3>Derechos</h3>
-                        <p>¡Conozca sus derechos como paciente y obtenga el mejor cuidado médico posible!</p>
-                    </div>
-                    <button onclick="openModal('modal-prevencion01')">Leer más</button>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="images/pacyfam/pacientes.jpg" alt="Imagen de la noticia">
-                    </div>
-                    <div class="card-text">
-                        <h3>Deberes</h3>
-                        <p>¡Conozca sus deberes como paciente! Descubra cómo puede colaborar con su atención médica y recibir el mejor cuidado posible.</p>
-                    </div>
-                    <button>Leer más</button>
-                </div>
-            </div>
-        </div>   
-    </section>
-
-
-    <section class="imagenes-banner">
-        <div class="img-banner_">
-            <img src="images/imagenes-diagnosticas.png">
-        </div>
-    </section>
-
-
-
-    <!--/////////////////////////////////////////////////////////////////////////////////////-->
-    <!--                                       modales                                          -->
-       <!--/////////////////////////////////////////////////////////////////////////////////////-->
-   
-
-<div id="modal-prevencion01" class="modal" onclick="closeModal(event, 'modal-prevencion01')">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal(event, 'modal-prevencion01')">&times;</span>
-    <div class="image-container">
-      <img src="images/prevencion.jpg" alt="Imagen 1" />
     </div>
-  </div>
-</div>
-
-<div id="modal-recomendacion" class="modal" onclick="closeModal(event, 'modal-recomendacion')">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal(event, 'modal-recomendacion')">&times;</span>
-    <div class="image-container">
-      <img src="images/recomendaciones.jpg" alt="Imagen 2" />
-    </div>
-  </div>
-</div>
+</section>
 
 
-    <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-<!-- INICIO footer  -->
 
-<footer id="footer" class="footer text-center">
-    <div class="container">
-        <div class="footer-inner text-white py grid">
-            <div class="footer-item">
 
-                <div class="icon">
-                    <img src="images/Logo_blanco.png">
+
+
+
+
+
+
+  <!--//////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO footer  -->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <div class="footer-inner text-white py grid">
+                <div class="footer-item">
+
+                    <div class="icon">
+                        <img src="images/Logo_blanco.png">
+                    </div>
+
+                    <address>
+
+                        <p>Cl. 45f #16a - 11</p>
+                        <p>Teusaquillo, Bogotá </p>
+                    </address>
                 </div>
 
-                <address>
-                    
-                    <p>Cl. 45f #16a - 11</p>
-                    <p>Teusaquillo, Bogotá </p>
-                </address>
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Accesos rapidos</h3>
+                    <ul class="tags-list flex">
+                        <li>Publicaciones</li>
+                        <li>Horarios</li>
+                        <li>Convenios</li>
+                        <li>Contactenos</li>
+                        <li>PQR</li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">
+                        <Menu>menu</Menu>
+                    </h3>
+                    <ul>
+                        <li><a href="#" class="text-white">Inicio</a></li>
+                        <li><a href="#" class="text-white">Nosotros</a></li>
+                        <li><a href="#" class="text-white">Paciente y Familia</a></li>
+                        <li><a href="#" class="text-white">Agendar cita</a></li>
+                        <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item">
+                    <h3 class="footer-head text-blue">Contactanos</h3>
+                    <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con
+                        nosotros en cualquier momento.
+                    </p>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-blue">clinicanueva@clinicanueva.com</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span class="text-blue">327 44 44</span>
+                    </div>
+
+
+                </div>
+                <br>
             </div>
 
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">Accesos rapidos</h3>
-                <ul class="tags-list flex">
-                    <li>Publicaciones</li>
-                    <li>Horarios</li>
-                    <li>Convenios</li>
-                    <li>Contactenos</li>
-                    <li>PQR</li>
-
-                </ul>
-            </div>
-
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">
-                    <Menu>menu</Menu>
-                </h3>
-                <ul>
-                    <li><a href="#" class="text-white">Inicio</a></li>
-                    <li><a href="#" class="text-white">Nosotros</a></li>
-                    <li><a href="#" class="text-white">Paciente y Familia</a></li>
-                    <li><a href="#" class="text-white">Agendar cita</a></li>
-                    <li><a href="#" class="text-white">Imagenes diagnosticas</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-item">
-                <h3 class="footer-head text-blue">Contactanos</h3>
-                <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con nosotros en cualquier momento.
-                </p>
-
-                <i class="fas fa-envelope"></i>
-                <span>@clinicanueva.com</span>
-                </li>
-                <li>
-                    <i class="fas fa-phone"></i>
-                    <span>+003 478 2834(00)</span>
-                </li>
+            <div class="footer-links">
+                <ul class="flex">
+                    <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
+                                class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
+                                class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-links">
-            <ul class="flex">
-                <li><a href="https://twitter.com/ClinicaNueva_" class="text-white flex"> <i
-                            class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://www.facebook.com/ClinicaNuevaBogota/" class="text-white flex"> <i
-                            class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/clinicanueva_/" class="text-white flex"> <i
-                            class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-
-<!-- FIN  de footer  -->
-
+    <!-- FIN  de footer  -->
 
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
     <!-- custom js -->
+    <script>
+        function showImageComparison(desktopImage, mobileImage) {
+            function updateImageVisibility() {
+                if (window.innerWidth <= 480) {
+                    desktopImage.style.display = 'none';
+                    mobileImage.style.display = 'block';
+                } else {
+                    desktopImage.style.display = 'block';
+                    mobileImage.style.display = 'none';
+                }
+            }
+
+            updateImageVisibility();
+
+            window.addEventListener('resize', function () {
+                updateImageVisibility();
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var desktopImage = document.querySelector('#content1 .desktop-image');
+            var mobileImage = document.querySelector('#content1 .mobile-image');
+            showImageComparison(desktopImage, mobileImage);
+        });
+
+    </script>
+
     <script src="js/script.js"></script>
     <script src="js/search.js"></script>
-
+    <script src="js/select-box.js"></script>
+<script src="js/fotos.js"></script>
+    <script src="js/scriptcarrousel.js"></script>
 </body>
 
 </html>
+
+
+
+<!--   
+    .contenedor{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        max-width: 140rem;
+    }
+
+
+
+
+
+-->

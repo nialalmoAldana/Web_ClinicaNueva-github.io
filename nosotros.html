@@ -26,42 +26,65 @@
 </head>
 
 <body>
-
-    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
-
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="en"
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="es"
         chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
-
     </df-messenger>
+    <div id="dialogflow-chat-icon">
+        <img src="https://www.gstatic.com/dialogflow-console-external/cx-badge.svg" alt="Chat Icon" />
+        <div id="df-messenger-chat-background-color"> </div>
+        <div id=""></div>
+    </div>
 
-    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <style>
+        df-messenger {
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #6f95ff;
+        }
+    </style>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO de header -->
+
     <header class="header ">
         <nav class="navbar bg-white">
-            <div class="sub-menu bg-blue">
+
+            <div class="sub-menu bg-blue text-md">
                 <nav>
                     <ul>
+                        <li><a href="imagenes_d.html">Imagenes diagnosticas</a></li>
+                        <li><a>-</a></li>
                         <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a>-</a></li>
                         <li><a href="horarios.html">Horarios</a></li>
+                        <li><a>-</a></li>
                         <li><a href="convenios.html">Convenios</a></li>
-                        <li><a href="contactenos.html">Contactenos</a></li>
-                        <li><a href="pqr">PQR</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="Contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="pqr.html">PQR</a></li>
                     </ul>
                     <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
                         class="sub-menu_btn">Pagos</button>
                 </nav>
             </div>
+
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
-                    <img src="images/ham-menu-icon.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
                 </button>
-
-                <div class="navbar-collapse bg-blue ">
+                <div class="navbar-collapse bg-blue text-white ">
                     <button type="button" class="navbar-hide-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
                             height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -75,21 +98,21 @@
                         </svg>
                     </button>
                     <ul class="navbar-nav">
+                        <br><br>
                         <li class="nav-item">
                             <a href="index.html" class="nav-link ">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="nosotros.html" class="nav-link active">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
                         </li>
                     </ul>
-
                     <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
-
-                    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
-
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
                     <div class="buscador">
                         <div class="search-space">
                             <div class="lupa-search">
@@ -117,74 +140,83 @@
 
                                     <tbody>
                                         <tr>
-                                            <td><a class="a-search" href="#">Inicio</a></td>
+                                            <td><a class="a-search" href="index.html">Inicio</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">horarios</a></td>
+                                            <td><a href="horarios.html">horarios</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pacientes</a></td>
+                                            <td><a href="pacyfam.html">pacientes</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">contactenos</a></td>
+                                            <td><a href="contactenos.html">contactenos</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">citas</a></td>
+                                            <td><a href="agendar.html">citas</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">Nosotros</a></td>
+                                            <td><a href="nosotros.html">Nosotros</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pagos</a></td>
+                                            <td><a href="publicaciones.html">pagos</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">publicaciones</a></td>
+                                            <td><a href="publicaciones.html">publicaciones</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">pqr</a></td>
+                                            <td><a href="pqr.html">pqr</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">imagenes</a></td>
+                                            <td><a href="imagenes_d.html">imagenes</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">noticias</a></td>
+                                            <td><a href="publicaciones.html">noticias</a></td>
                                         </tr>
 
                                         <tr>
-                                            <td><a href="#">ubicanos</a></td>
+                                            <td><a href="contactenos.html">ubicanos</a></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">servicios</a></td>
+                                            <td><a href="pqr.html">quejas</a></td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">especialidades</a></td>
+                                            <td><a href="pqr.html">reclamos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href=nosotros.html">historia</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="nosotros.html">mision</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="nosotros.html">vision</a></td>
                                         </tr>
                                     </tbody>
+
                                 </table>
                             </div>
                         </div>
                     </div>
-
-                    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
-
                 </div>
             </div>
         </nav>
     </header>
 
-    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- INICIO de Redes sociales flotantes-->
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!-- INICIO de Redes sociales flotantes
 
     <article class="contenedor-redes-sociales">
         <div class="icono">
@@ -200,7 +232,7 @@
                     class="fa fa-instagram"></i></a>
 
             <div class="contenedor-descripcion">
-                <a href="#" class="icono-descripcion color-twitter">Seguir en instagram</a>
+                <a href="#" class="icono-descripcion color-instagram">Seguir en instagram</a>
             </div>
         </div>
         <div class="icono">
@@ -211,8 +243,16 @@
                 <a href="#" class="icono-descripcion color-googleplus">Seguir en youtube</a>
             </div>
         </div>
-    </article>
+        <div class="icono">
+            <a href="https://www.youtube.com/channel/UCdi16ArjADHRwoU-DXDP7rA/featured?app=desktop"
+                class="icono-primary color-green" target="_blank"><i class="fa fa-whatsapp"></i></a>
 
+            <div class="contenedor-descripcion">
+                <a href="#" class="icono-descripcion color-whatsapp">Seguir en youtube</a>
+            </div>
+        </div>
+    </article>
+-->
     <!-- FIN de Redes sociales flotantes-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
@@ -220,7 +260,7 @@
     <!-- INICIO HERO  -->
 
     <section class="hero">
-        <div class="hero-nosotros">
+        <div class="hero-nosotros hero-nosotros_nos">
             <div class="negro-bg text-white text-center">
                 <h1>Nosotros</h1>
             </div>
@@ -235,99 +275,361 @@
 
         <div class="flex-container">
             <div class="flex-item-1">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/WU2u88zuKZE"
+                <iframe width="360" height="215" src="https://www.youtube.com/embed/WU2u88zuKZE"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
-            <div class="flex-item-2 text-shadow">
-                <p>La Clínica Nueva es una obra de la Congregación de Dominicas de Santa Catalina de Sena, dedicada a
-                    proporcionar servicios médicos de alta calidad a sus pacientes. Desde su fundación, se ha enfocado
-                    en brindar atención médica especializada en diferentes áreas, con el objetivo de mejorar la calidad
-                    de vida de sus pacientes. Con un equipo de profesionales altamente capacitados y tecnología de
-                    última generación, la Clínica Nueva de Bogotá se esfuerza por brindar atención médica excepcional y
-                    ser un referente en el sector de la salud en Colombia.</p>
+            <div class="flex-item-2 ">
+                <div>
+                    <p>La Clínica Nueva es una obra de la Congregación de Dominicas de Santa Catalina de Sena, dedicada
+                        a proporcionar servicios médicos de alta calidad a sus pacientes. Desde su fundación, se ha
+                        enfocado en brindar atención médica especializada en diferentes áreas, con el objetivo de
+                        mejorar la
+                        calidad de vida de sus pacientes. Con un equipo de profesionales altamente capacitados y
+                        tecnología de
+                        última generación, la Clínica Nueva de Bogotá se esfuerza por brindar atención médica
+                        excepcional y
+                        ser un referente en el sector de la salud en Colombia.</p>
+                </div>
             </div>
         </div>
+
     </section>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-    <div class="linea-separadora"></div>
+    <!--INICIO MISION Y VISION -->
+
+    <section class="mision-vision">
+        <section class="contenedor-mv">
+            <div class="mision-div">
+                <h1 class="mv-subtitle text-shadow">Misión</h2>
+                    <p>Contribuir activamente al objetivo de la Congregación de Dominicas de Santa Catalina de Sena de
+                        servir a través de la atención en salud, la generación y transmisión de conocimiento por medio
+                        de
+                        una gestión organizacional eficiente capaz de generar rentabilidad social y sostenibilidad
+                        institucional.
+                    </p>
+            </div>
+            <div class="vision-div">
+                <h1 class="mv-subtitle text-shadow"> vision</h2>
+                    <p>En el año 2025, la Clinica Nueva será una institución sostenible, socialmente rentable, preferida
+                        por
+                        los usuarios y clientes gracias a su modelo de gestión organizacional eficiente, la humanización
+                        de
+                        sus acciones asistenciales y la gestión del conocimiento, con una cultura organizacional
+                        consolidada
+                        a la luz de los principios y valores de la Congregación de Dominicas de Santa Catalina de Sena.
+                    </p>
+            </div>
+        </section>
+
+
+
+
+    </section>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-    <section class="mv-nosotros py">
-        <div class="contenedor-nos">
-            <div class="info-nos text-justify ">
-                <img src="images/logo.png">
-                <p class="text-shadow ">La Clínica Nueva, es una obra de la Congregación de Dominicas de
-                    Santa Catalina
-                    de Sena, primera comunidad religiosa fundada en 1880 en Villa de Leyva (Boyacá).
-                    <br><br>Como institución hospitalaria nace el 12 de octubre de 1958. Durante más de medio siglo de
-                    existencia y desde sus inicios, se continúa trabajado con la vocación de servicio y el compromiso
-                    con sus cambios y tendencias conservando siempre nuestro propósito común: El paciente y su familia.
-                </p>
-                <div class="btn_default1">
-                    <nav>
-                        <ul>
-                            <li>
-                                Principios
-                                <span></span><span></span><span></span><span></span>
-                            </li>
-                            <li>
-                                Valores
-                                <span></span><span></span><span></span><span></span>
-                            </li>
 
-                        </ul>
-                    </nav>
-                </div>
+    <section class="nos- bg-blue">
+        <div class="contenedor-nos-">
+            <div class="nos-row">
+                <h2 class="title-nos- text-white">Principios</h2>
             </div>
 
+            <div class="nos-row ">
 
-            <!--                                         -->
-
-            <div id="div1">
-                <div id="div2">
-                    <div class="text-center " id="misiondiv">
-                        <h1 class="text-blue text-shadow">Misión</h1>
-                        <p>Contribuir activamente al objetivo de la Congregación de Dominicas de Santa Catalina de Sena
-                            de servir a través de la atención en salud, la generación y transmisión de conocimiento por
-                            medio de una gestión organizacional eficiente capaz de generar rentabilidad social y
-                            sostenibilidad institucional.</p>
-                    </div>
-                    <div class="text-center" id="visiondiv" style="display:none">
-                        <h1 class="text-blue text-shadow">Visión</h1>
-                        <p>En el año 2025, la Clinica Nueva será una institución sostenible, socialmente rentable,
-                            preferida por los usuarios y clientes gracias a su modelo de gestión organizacional
-                            eficiente, la humanización de sus acciones asistenciales y la gestión del conocimiento, con
-                            una cultura organizacional consolidada a la luz de los principios y valores de la
-                            Congregación de Dominicas de Santa Catalina de Sena.
-
+                <div class="nos-column ">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/equipo.png">
+                        </div>
+                        <h3>Trabajo en equipo</h3>
+                        <!--
+                        <p class="text-justify">
+                            Este principio busca que todos lo colaboradores de la Clínica Nueva tengan el mismo objetivo
+                            y persigan una única meta: “la excelencia institucional a través de la humanización de la
+                            atención”. Trabajar en equipo implica que cada miembro del mismo se sienta responsable,
+                            coopere y aporte todos sus recursos personales para lograr un objetivo común.
                         </p>
+                        -->
                     </div>
-
-                    <button id="btn-toggle" onclick="toggleInfo()">ver visión <svg xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-caret-right" width="20" height="20" viewBox="0 0 24 24"
-                            stroke-width="3" stroke="#004AAD" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M10 18l6 -6l-6 -6v12" />
-                        </svg></button>
                 </div>
+
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/servicio.png">
+                        </div>
+                        <h3>Valoración de servicio</h3>
+                        <!--
+                        <p class="text-justify">
+                            Es el principio institucional que promociona la inclinación de ayuda al otro. Mediante la
+                            vocación de servicio, la Clínica Nueva incentiva a sus colaboradores a servir con
+                            desprendimiento sensibilidad y pasión para lograr el bienestar general
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/cumplimiento.png">
+                        </div>
+                        <h3>Cumplimiento de compromisos</h3>
+                        <!--
+                        <p class="text-justify">
+                            Es el principio que determina el éxito de nuestros objetivos. Con este, la Clínica Nueva
+                            alimenta a sus colaboradores a ser firmes, responsables y consientes para cumplir
+                            oportunamente con los compromisos adquiridos.
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/comunicacion.png">
+                        </div>
+                        <h3>Comunicación asertiva</h3>
+                        <!--
+                        <p class="text-justify">
+                            Este principio busca garantizar una atención segura, en un ambiente amable con relaciones
+                            cordiales y colaboradores comprometidos. A través de la comunicación asertiva, la clínica
+                            Nueva propende para cada uno de sus integrantes se exprese y de a entender de forma clara,
+                            concreta y respetuosa su punto de vista, sus necesidades y expectativas.
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/logro.png">
+                        </div>
+                        <h3>Orientación al logro (resultados)</h3>
+                        <!--
+                        <p class="text-justify">
+                            Este principio busca guiar al personal en la consecución de los resultados esperados por la
+                            institución. A través de la orientación al logro se compromete a cada colaborador y a cada
+                            equipo de trabajo a enfocar sus esfuerzos para lograr los objetivos planeados por la
+                            institución
+                        </p>
+                        -->
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <section class="nos- .nos-bg_blue">
+
+        <div class="contenedor-nos-">
+            <div class="nos-row">
+                <h2 class="title-nos- text-blue">Valores</h2>
+            </div>
+            <div class="nos-row">
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/amor.png">
+                        </div>
+                        <h3>Humanidad</h3>
+                        <!--
+                        <p class="text-justify">
+                            Es la virtud que representa el trato cálido y compasivo no solo al paciente, sino a toda la
+                            comunidad institucional (familiares, compañeros, visitantes…) e implica “dar lo que quiero
+                            recibir”: solidaridad respeto consideración, misericordia, amor por el paciente, por el
+                            prójimo y por el oficio
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/honesto.png">
+                        </div>
+                        <h3>Honestidad</h3>
+                        <!--
+                        <p class="text-justify">
+                            Es el valor que nos invita a vivir guardando coherencia entre como pensamos y como actuamos;
+                            la honestidad esta orienta por la verdad y la justicia, conduciéndonos a una vida de
+                            integridad, que exige respeto por nosotros mismos y por nuestros semejantes.
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/constante.png">
+                        </div>
+                        <h3>Constancia </h3>
+                        <!--
+                        <p class="text-justify">
+                            Virtud que nos alienta a continuar con perseverancia y firmeza ante los obstáculos que se
+                            interponen para alcanzar nuestras metas. Los colaboradores de Clínica Nueva somos constantes
+                            para ofrecer el mejor de los servicios buscando la satisfacción de nuestros usuarios
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/etica.png">
+                        </div>
+                        <h3>Ética </h3>
+                        <!--
+                        <p class="text-justify">
+                            Constituye el conjunto de normas y principios que orientan nuestro equipo correcto actuar.
+                            Cada uno de nuestros actos como miembros de la Clínica Nueva, esta gobernado por los
+                            principios éticos, reflejados a través del cumplimiento e los deberes, la búsqueda del mayor
+                            beneficio y el respeto por las leyes y por la moral del medio.
+                        </p>
+                        -->
+                    </div>
+                </div>
+                <div class="nos-column">
+                    <div class="nos-card">
+                        <div class="nos-icon-wrapper">
+                            <img src="images/princios-valores/superacion-personal.png">
+                        </div>
+                        <h3>Superación</h3>
+                        <!--
+                        <p class="text-justify">
+                            Es el valor que nos invita a extremar los esfuerzos para ser cada vez mejores en todo
+                            aspecto (humano, espiritual, profesional, económico etc.); la superación exige organización,
+                            planeación, perseverancia y trabajo continuo y es el valor que impulsa el aprendizaje y
+                            crecimiento de la organización.
+                        </p>
+                        -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
     <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!--NUESTRO EQUIPO-->
+    <!--NUESTRO SEDES-->
+    <section class="sedes">
 
+        <div class="contenedor-sedes">
+
+            <div class="sede-principal ">
+
+                <h1 class="titulo-sedes_h1 text-center">Sede principal</h1>
+                <div class="contenedor-sede">
+                    <div class="sede-texto">
+                        <div class="sede-texto_seccion">
+                            <div class="sede-texto_seccion_img">
+                                <img src="images/ubicacion-icon.png" style="width: 40px;">
+                            </div>
+                            <div>
+                                <p><span>Ubicacion</span></p>
+                                <p>Cl. 45f #16a-11, Teusaquillo, Bogotá</p><br>
+                            </div>
+                        </div>
+
+                        <div class="sede-texto_seccion">
+                            <div class="sede-texto_seccion_img">
+                                <img src="images/contactenos-icon.png" style="width: 40px;">
+                            </div>
+                            <div>
+
+                                <p><span>Contactenos</span></p>
+                                <p>13274444</p><br>
+                            </div>
+                        </div>
+
+                        <div class="sede-texto_seccion">
+                            <div class="sede-texto_seccion_img">
+                                <img src="images/mail-icon.png" style="width: 40px;">
+                            </div>
+                            <div>
+                                <p><span>Correo</span></p>
+                                <p>clinicanueva@clinicanueva.com</p><br>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mapa-sede">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7749170677994!2d-74.07346162421798!3d4.634201542228812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2c3ba726af%3A0x278ae06508ae1471!2sCl%C3%ADnica%20Nueva!5e0!3m2!1ses-419!2sco!4v1684859657162!5m2!1ses-419!2sco"
+                            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="sede-quiroga ">
+
+                <h1 class="titulo-sedes_h1 text-center ">Sede quiroga</h1>
+                <div class="contenedor-sede">
+                    <!---->
+                    <div class="sede-texto">
+
+                        <div class="sede-texto_seccion">
+                            <div class="sede-texto_seccion_img">
+                                <img src="images/ubicacion-icon.png" style="width: 40px;">
+                            </div>
+                            <div>
+
+                                <p><span>Ubicacion</span></p>
+                                <p>Cl. 32 sur #21c-30, Quiroga, Bogotá</p><br>
+                            </div>
+                        </div>
+
+                        <div class="sede-texto_seccion">
+                            <div class="sede-texto_seccion_img">
+                                <img src="images/contactenos-icon.png" style="width: 40px;">
+                            </div>
+                            <div>
+                                <p><span>Contactenos</span></p>
+                                <p>327 44 44 - Ext 800</p>
+                            </div>
+                        </div>
+<br>
+                        <div class="sede-texto_seccion">
+                            <div class="sede-texto_seccion_img">
+                                <img src="images/mail-icon.png" style="width: 40px;">
+                            </div>
+                            <div>
+                                <p><span>Correo</span></p>
+                                <p>quiroga@clinicanueva.com</p><br>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="mapa-sede">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.078013142867!2d-74.11433819999999!3d4.5800124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f98d05a23a7db%3A0x25d88a4fffbe0605!2sCl.%2032%20Sur%20%2321c-30%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1684878059083!5m2!1ses-419!2sco"
+                            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
+   
     <section class="nuestro_equipo">
-        <div class="Carousel py">
+        <div class="Carousel">
             <h1 class="text-center text-blue">Nuestro equipo</h2>
-                <div class="slick-list" id="slick-list">
+                <div class="slick-listññ" id="slick-list">
+                    <!--
                     <button class="slick-arrow slick-prev" id="button-prev" data-button="button-prev"
                         onclick="app.processingButton(event)">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
@@ -338,15 +640,17 @@
                             </path>
                         </svg>
                     </button>
+                    -->
                     <div class="slick-track" id="track">
                         <div class="slick">
                             <div>
                                 <a href="/">
 
                                     <picture>
-                                        <img src="./images/doc-1.png" alt="Image">
+                                        <img src="./images/Quijano-DirectorGeneral.png" alt="Image">
                                     </picture>
-                                    <h3 class="pie-slick text-center text-white">Doctor 4</h3>
+
+
                                 </a>
                             </div>
                         </div>
@@ -354,46 +658,48 @@
                             <div>
                                 <a href="/">
 
-                                    <img src="./images/doc-2.png" alt="Image">
+                                    <img src="./images/Norman-DirectorAdministrativo.png" alt="Image">
                                     </picture>
-                                    <h3 class="pie-slick text-center text-white">Doctor 4</h3>
+
                                 </a>
                             </div>
                         </div>
                         <div class="slick">
                             <div>
                                 <a href="/">
-                                    <img src="./images/doc-3.png" alt="Image">
+                                    <img src="./images/Martinez-DirectorMedico.png" alt="Image">
                                     </picture>
-                                    <h3 class="pie-slick text-center text-white">Doctor 4</h3>
+
                                 </a>
                             </div>
 
-                        </div>
-                        <div class="slick">
-                            <div>
-                                <a href="/">
-
-                                    <picture>
-                                        <img src="./images/doc-4.png" alt="Image">
-                                    </picture>
-                                    <h3 class="pie-slick text-center text-white">Doctor 4</h3>
-                                </a>
-                            </div>
                         </div>
                         <div class="slick">
                             <div>
                                 <a href="/">
 
                                     <picture>
-                                        <img src="./images/doc-4.png" alt="Image">
+                                        <img src="./images/Sara-DirectoraFinanciera.png" alt="Image">
                                     </picture>
-                                    <h3 class="pie-slick text-center text-white">Doctor 4</h3>
+
                                 </a>
                             </div>
                         </div>
+                        <div class="slick">
+                            <div>
+                                <a href="/">
 
+                                    <picture>
+                                        <img src="./images/Olaga-veedora.png" alt="Image">
+                                    </picture>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slick"></div>
                     </div>
+
+                    <!--
                     <button class="slick-arrow slick-next" id="button-next" data-button="button-next"
                         onclick="app.processingButton(event)">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
@@ -404,89 +710,38 @@
                             </path>
                         </svg>
                     </button>
+                -->
                 </div>
 
         </div>
     </section>
 
-    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!-- SECCION TRABAJE CON NOSOTROS-->
 
-    <!--NUESTRO EQUIPO-->
+    <section class="trabajo_nosotros">
+        <div class="trabajo-nos" id="content1"
+            onclick="window.open('https://co.computrabajo.com/empresas/ofertas-de-trabajo-de-clinica-nueva-B965A5201617A8AC', '_blank')">
+            <div class="img-trabajeconnosotros">
 
-    <section class="principios bg-blue">
-        <div class="container-principios">
-            <h1 class="text-white">Principios</h1>
-            <div class="row-principios">
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Trabajo en equipo</h2>
-              
-                </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>vocación de servicio</h2>
-              </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Cumplimiento de compromisos</h2>
-                   
-                </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Comunicacion asertiva</h2>
-              
-                </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Orientacion al logro</h2>
+                <img class="desktop-image"
+                    style="width: 100%; margin: 5rem 1rem;  box-shadow: 0 2px 5px 0 rgba(102, 102, 102, 0.726);"
+                    src="images/trabajeaquiH.png">
 
-                </div>
-                
+                <img class="mobile-image"
+                    style="width: 80%; padding: 2rem 0rem; margin: 5rem 1rem; margin: 0 auto;  box-shadow: 0 2px 5px 0 rgba(102, 102, 102, 0.726);"
+                    src="images/contact-trabajeaquiV.png">
+
             </div>
 
-        </div>
-    </section>
-
-
-    <section class="principios ">
-        <div class="container-principios">
-            <h1 class="text-blue">Valores</h1>
-            <div class="row-principios">
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Humanidad</h2>
-              
-                </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Honstidad</h2>
-              </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Constancia</h2>
-                   
-                </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Etica</h2>
-              
-                </div>
-                <div class="principio">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Superacion</h2>
-
-                </div>
-                
-            </div>
 
         </div>
     </section>
 
     <!--////////////////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!--ESTADO FINANCIERO-->
+    <!--ESTADO FINANCIERO
 
     <section class="informes-se">
         <div class="contenedor-informes">
@@ -585,7 +840,7 @@
                     <div class="select" id="select1">
                         <div class="contenido-select1">
                             <h1 class="titulo">Informes de gestión</h1>
-                            <p class="descripcion">Selecciona el informe que deseas ver</p>
+                            <p class="descripcion">Selecciona el informe de gestión que deseas ver</p>
                         </div>
                         <i class="fas fa-angle-down"></i>
                     </div>
@@ -665,19 +920,7 @@
 
         </div>
     </section>
-
-    <!--//////////////////////////////////////////////////////////////////////////////////////-->
-
-    <!-- SECCION TRABAJE CON NOSOTROS-->
-
-    <section class="trabajo_nosotros">
-        <div class="trabajo-nos"
-            onclick="window.open('https://co.computrabajo.com/empresas/ofertas-de-trabajo-de-clinica-nueva-B965A5201617A8AC', '_blank')">
-            <h1 class="text-blue text-center">Trabaje con nosotros</h1>
-            <img src="images/trabajo-banner.PNG">
-        </div>
-    </section>
-
+-->
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO footer  -->
@@ -728,16 +971,18 @@
                     <p class="text text-md">¡Nos encantaría saber de ti!<br> No dudes en ponerte en contacto con
                         nosotros en cualquier momento.
                     </p>
-
-                    <i class="fas fa-envelope"></i>
-                    <span>@clinicanueva.com</span>
-                    </li>
-                    <li>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span class="text-blue">clinicanueva@clinicanueva.com</span>
+                    </div>
+                    <div>
                         <i class="fas fa-phone"></i>
-                        <span>+003 478 2834(00)</span>
-                    </li>
-                    </ul>
+                        <span class="text-blue">327 44 44</span>
+                    </div>
+
+
                 </div>
+                <br>
             </div>
 
             <div class="footer-links">
@@ -758,11 +1003,38 @@
     <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- custom js -->
+    <script>
+        function showImageComparison(desktopImage, mobileImage) {
+            function updateImageVisibility() {
+                if (window.innerWidth <= 480) {
+                    desktopImage.style.display = 'none';
+                    mobileImage.style.display = 'block';
+                } else {
+                    desktopImage.style.display = 'block';
+                    mobileImage.style.display = 'none';
+                }
+            }
+
+            updateImageVisibility();
+
+            window.addEventListener('resize', function () {
+                updateImageVisibility();
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var desktopImage = document.querySelector('#content1 .desktop-image');
+            var mobileImage = document.querySelector('#content1 .mobile-image');
+            showImageComparison(desktopImage, mobileImage);
+        });
+
+    </script>
 
     <script src="js/script.js"></script>
     <script src="js/search.js"></script>
     <script src="js/select-box.js"></script>
-
+<script src="js/fotos.js"></script>
+    <script src="js/scriptcarrousel.js"></script>
 </body>
 
 </html>

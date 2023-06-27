@@ -50,6 +50,14 @@ App.prototype.autoChangePosition = function() {
     } else {
         track.style.left = 0;
     }
+    const totalSlicks = slick.length;
+    const visibleSlicks = Math.floor(listWidth / slickWidth);
+    const remainingSlicks = totalSlicks - visibleSlicks;
+
+    if (leftPosition >= (remainingSlicks + 1) * slickWidth) {
+        const distanceToMove = (totalSlicks - visibleSlicks) * slickWidth;
+        track.style.left = `-${distanceToMove}px`;
+    }
 }
 
 

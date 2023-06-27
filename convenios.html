@@ -27,35 +27,64 @@
 
 <body>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185"
-        language-code="en" chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
-    
+    <df-messenger intent="WELCOME" chat-title="Chat" agent-id="0295391e-4a7b-4e68-a45c-dffbc24f7185" language-code="es"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/522/522930.png?w=826&t=st=1683230155~exp=1683230755~hmac=024dbb8d4c14b90fd0eceb2c9d4666b5b827fdd68cba950d83f534b5fd053d74">
     </df-messenger>
+    <div id="dialogflow-chat-icon">
+        <img src="https://www.gstatic.com/dialogflow-console-external/cx-badge.svg" alt="Chat Icon" />
+        <div id="df-messenger-chat-background-color"> </div>
+        <div id=""></div>
+    </div>
+
+    <style>
+        df-messenger {
+            --df-messenger-send-icon: #878fac;
+            --df-messenger-user-message: #6f95ff;
+        }
+    </style>
+
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+
     <!-- INICIO de header -->
+
     <header class="header ">
         <nav class="navbar bg-white">
-            <div class="sub-menu bg-blue">
+
+            <div class="sub-menu bg-blue text-md">
                 <nav>
                     <ul>
+                        <li><a href="imagenes_d.html">Imagenes diagnosticas</a></li>
+                        <li><a>-</a></li>
                         <li><a href="publicaciones.html">Publicaciones</a></li>
+                        <li><a>-</a></li>
                         <li><a href="horarios.html">Horarios</a></li>
+                        <li><a>-</a></li>
                         <li><a href="convenios.html">Convenios</a></li>
-                        <li><a href="contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
+                        <li><a href="Contactenos.html">Contactenos</a></li>
+                        <li><a>-</a></li>
                         <li><a href="pqr.html">PQR</a></li>
                     </ul>
                     <button href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=11386"
                         class="sub-menu_btn">Pagos</button>
                 </nav>
             </div>
+
             <div class="container flex">
                 <a href="index.html" class="navbar-brand">
                     <img src="images/LogoClinicaNueva2023.png" alt="Logo Clinica">
                 </a>
                 <button type="button" class="navbar-show-btn">
-                    <img src="images/ham-menu-icon.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48"
+                        height="48" viewBox="0 0 24 24" stroke-width="3" stroke="#1988f0" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
                 </button>
-
-                <div class="navbar-collapse bg-blue ">
+                <div class="navbar-collapse bg-blue text-white ">
                     <button type="button" class="navbar-hide-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-axis-x" width="60"
                             height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
@@ -69,51 +98,132 @@
                         </svg>
                     </button>
                     <ul class="navbar-nav">
+                        <br><br>
                         <li class="nav-item">
                             <a href="index.html" class="nav-link ">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a href="nosotros.html" class="nav-link active">Nosotros</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pacyfam.html" class="nav-link">Paciente y Familia</a>
+                        <li class="nav-item ">
+                            <a href="pacyfam.html" class="nav-link nav-link_lg">Paciente y Familia</a>
                         </li>
                     </ul>
-                    <button class="agendar-btn">Agendar cita</button>
-                    <div class="search-bar">
-                        <form>
-                            <div class="search-bar-box flex">
-                                <span class="search-icon flex">
-                                    <img src="images/search-icon-dark.png">
-                                </span>
-                                <input type="search" class="search-control" placeholder="Buscar">
+                    <!--  buscador  -->
+                    <button class="agendar-btn"><a href="agendar.html">Agendar cita</a></button>
+                    <span class="search-icon flex">
+                        <img src="" style="visibility: hidden; display: none;">
+                    </span>
+
+                    <div class="buscador">
+                        <div class="search-space">
+                            <div class="lupa-search">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
+                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#ffffff"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
                             </div>
-                        </form>
+                            <div class="input-space">
+                                <input class="input-s" type="search" id="input-search" placeholder="Buscar aqui">
+                            </div>
+                        </div>
+                        <div class="content-search">
+                            <div class="content-table">
+                                <p>Lista de resultados:</p>
+                                <table id="table">
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><a class="a-search" href="index.html">Inicio</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="horarios.html">horarios</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="pacyfam.html">pacientes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="contactenos.html">contactenos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="agendar.html">citas</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="nosotros.html">Nosotros</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">pagos</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">publicaciones</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="pqr.html">pqr</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="imagenes_d.html">imagenes</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="publicaciones.html">noticias</a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><a href="contactenos.html">ubicanos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pqr.html">quejas</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="pqr.html">reclamos</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href=nosotros.html">historia</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="nosotros.html">mision</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="nosotros.html">vision</a></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
 
+    <!--/////////////////////////////////////////////////////////////////////////////////////-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
     <!-- INICIO footer  -->
 
     <section>
-        <div class="hero-nosotros">
+        <div class="hero-nosotros hero-nosotros_convenios">
             <div class="negro-bg text-white text-center">
-                <h1><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" width="52"
-                        height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <rect x="4" y="5" width="16" height="16" rx="2" />
-                        <line x1="16" y1="3" x2="16" y2="7" />
-                        <line x1="8" y1="3" x2="8" y2="7" />
-                        <line x1="4" y1="11" x2="20" y2="11" />
-                        <line x1="11" y1="15" x2="12" y2="15" />
-                        <line x1="12" y1="15" x2="12" y2="18" />
-                    </svg>Convenios</h1>
+                <h1>Convenios</h1>
             </div>
         </div>
     </section>
@@ -158,7 +268,7 @@
     
 <!--//////////////////////////////////////////////////////////////////////////////////////-->
 
-    <!-- INICIO de Redes sociales flotantes-->
+    <!-- INICIO de Redes sociales flotantes
 
     <article class="contenedor-redes-sociales">
         <div class="icono">
@@ -186,7 +296,7 @@
             </div>
         </div>
     </article>
-
+-->
     <!-- FIN de Redes sociales flotantes-->
 
     <!--//////////////////////////////////////////////////////////////////////////////////////-->
